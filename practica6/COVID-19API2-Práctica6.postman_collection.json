@@ -1,0 +1,1315 @@
+{
+	"info": {
+		"_postman_id": "fa012462-7421-485d-ae2b-a3433846c860",
+		"name": "COVID-19 API 2 - Práctica 6",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "API Ping \"Estamos Vivos\"",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Validar el código 200\", () => {\r",
+							"    pm.response.to.be.ok;\r",
+							"    pm.response.to.have.status(200);\r",
+							"    pm.expect(pm.response.code).to.eql(200);\r",
+							"    pm.response.to.have.status(\"OK\");\r",
+							"    //pm.expect(pm.response.code).to.\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Validar que la respuesta sea en formato JSON\", function() {\r",
+							"    pm.response.to.be.json;\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Validar campos en el Body Response\", function() {\r",
+							"    const responseJSON = pm.response.json();\r",
+							"    console.log(\"Respuesta en JSON:\", responseJSON);\r",
+							"    //console.log(\"Campo 1:\", responseJSON.country);\r",
+							"    //console.log(\"Campo 2:\", responseJSON[0].country);\r",
+							"    pm.expect(responseJSON).to.eql(\"pong\");\r",
+							"    pm.expect(responseJSON).to.be.a(\"string\");\r",
+							"    pm.expect(responseJSON).to.have.lengthOf(4);\r",
+							"    pm.expect(responseJSON.country).to.be.undefined; //empty //null\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Validar que la Response tenga un texto\", function(){\r",
+							"    console.log(\"Respuesta en Texto:\", pm.response.text());\r",
+							"    pm.expect(pm.response.text()).to.include('pong');\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Probar code status esté dentro de unos códigos\", () => {\r",
+							"pm.expect(pm.response.code).to.be.oneOf([200,201,204]);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Validar el tiempo de respuesta sea menor a 500 ms\", () => {\r",
+							"    pm.expect(pm.response.responseTime).to.be.below(500)\r",
+							"});\r",
+							"\r",
+							"//pm.test(\"Validar campos\", () => {\r",
+							"    //const responseJSON = pm.response.json();\r",
+							"    //pm.expect(responseJSON[0]).to.be.oneOf([\"country\", \"code\", \"confirmed\"]);\r",
+							"//});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://{{base-url}}/api/v1/ping",
+					"protocol": "https",
+					"host": [
+						"{{base-url}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"ping"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "API Ping \"Estamos Vivos\" ERROR",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Validar el código 400\", () => {\r",
+							"    pm.response.to.be.not.ok;\r",
+							"    pm.response.to.have.status(404);\r",
+							"    pm.expect(pm.response.code).to.eql(404);\r",
+							"    pm.response.to.have.status(\"Not Found\");\r",
+							"    //pm.expect(pm.response.code).to.\r",
+							"});\r",
+							"\r",
+							"\r",
+							"\r",
+							"pm.test(\"Probar code status esté dentro de unos códigos\", () => {\r",
+							"pm.expect(pm.response.code).to.be.oneOf([400,401,404]);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Validar el tiempo de respuesta sea menor a 900 ms\", () => {\r",
+							"    pm.expect(pm.response.responseTime).to.be.below(900)\r",
+							"});\r",
+							"\r",
+							"//pm.test(\"Validar campos\", () => {\r",
+							"    //const responseJSON = pm.response.json();\r",
+							"    //pm.expect(responseJSON[0]).to.be.oneOf([\"country\", \"code\", \"confirmed\"]);\r",
+							"//});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://{{base-url}}/api/v1/pong",
+					"protocol": "https",
+					"host": [
+						"{{base-url}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"pong"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "API Actualización Más Reciente",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"const responseJSON = pm.response.json();\r",
+							"\r",
+							"console.log(\"Respuesta:\", responseJSON);\r",
+							"console.log(\"Respuesta Campo Status:\", responseJSON.status);\r",
+							"console.log(\"Respuesta Summary\", responseJSON.data.summary)\r",
+							"\r",
+							"pm.test(\"Probar el campo Status (200)\", () => {\r",
+							"    pm.expect(responseJSON.status).to.eql(200);\r",
+							"})\r",
+							"\r",
+							"pm.test(\"Validar el código 200\", () => {\r",
+							"    pm.response.to.be.ok;\r",
+							"    pm.response.to.have.status(200);\r",
+							"    pm.expect(pm.response.code).to.eql(200);\r",
+							"    pm.response.to.have.status(\"OK\");\r",
+							"    //pm.expect(pm.response.code).to.\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Validar que la respuesta sea en formato JSON\", function() {\r",
+							"    pm.response.to.be.json;\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Validar campos en el Body Response\", function() {\r",
+							"    const responseJSON = pm.response.json();\r",
+							"    console.log(\"Respuesta en JSON:\", responseJSON);\r",
+							"\r",
+							"    pm.expect(responseJSON.data.summary.total_cases).to.be.a(\"number\");\r",
+							"    pm.expect(responseJSON.data.regions.turkey.name).to.eq(\"Turkey\");\r",
+							"    pm.expect(responseJSON.data.regions.turkey.tested).to.be.a(\"number\");\r",
+							"    //pm.expect(responseJSON).to.eql(\"pong\");\r",
+							"    //pm.expect(responseJSON).to.be.a(\"string\");\r",
+							"    //pm.expect(responseJSON).to.have.lengthOf(4);\r",
+							"    pm.expect(responseJSON.country).to.be.undefined; //empty //null\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Validar que la Response tenga un texto\", function(){\r",
+							"    //console.log(\"Respuesta en Texto:\", pm.response.text());\r",
+							"    pm.expect(pm.response.text()).to.include('regi');\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Probar code status esté dentro de unos códigos\", () => {\r",
+							"pm.expect(pm.response.code).to.be.oneOf([200,201,204]);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Validar el tiempo de respuesta sea menor a 800 ms\", () => {\r",
+							"    pm.expect(pm.response.responseTime).to.be.below(800)\r",
+							"});\r",
+							"\r",
+							"//pm.test(\"Validar campos\", () => {\r",
+							"    //const responseJSON = pm.response.json();\r",
+							"    //pm.expect(responseJSON[0]).to.be.oneOf([\"country\", \"code\", \"confirmed\"]);\r",
+							"//});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://{{base-url}}/api/v1/summary/latest",
+					"protocol": "https",
+					"host": [
+						"{{base-url}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"summary",
+						"latest"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "API Actualización Más Reciente ERROR",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Validar el código 400\", () => {\r",
+							"    pm.response.to.be.not.ok;\r",
+							"    pm.response.to.have.status(404);\r",
+							"    pm.expect(pm.response.code).to.eql(404);\r",
+							"    pm.response.to.have.status(\"Not Found\");\r",
+							"    //pm.expect(pm.response.code).to.\r",
+							"});\r",
+							"\r",
+							"\r",
+							"\r",
+							"pm.test(\"Probar code status esté dentro de unos códigos\", () => {\r",
+							"pm.expect(pm.response.code).to.be.oneOf([400,401,404]);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Validar el tiempo de respuesta sea menor a 500 ms\", () => {\r",
+							"    pm.expect(pm.response.responseTime).to.be.below(500)\r",
+							"});\r",
+							"\r",
+							"//pm.test(\"Validar campos\", () => {\r",
+							"    //const responseJSON = pm.response.json();\r",
+							"    //pm.expect(responseJSON[0]).to.be.oneOf([\"country\", \"code\", \"confirmed\"]);\r",
+							"//});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://{{base-url}}/api/v1/summary/lat",
+					"protocol": "https",
+					"host": [
+						"{{base-url}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"summary",
+						"lat"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "API por Region",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"const responseJSON = pm.response.json();\r",
+							"\r",
+							"console.log(\"Respuesta:\", responseJSON);\r",
+							"console.log(\"Respuesta Campo Status:\", responseJSON.status);\r",
+							"console.log(\"Respuesta Summary\", responseJSON.data.summary)\r",
+							"\r",
+							"pm.test(\"Probar el campo Status (200)\", () => {\r",
+							"    pm.expect(responseJSON.status).to.eql(200);\r",
+							"})\r",
+							"\r",
+							"pm.test(\"Validar el código 200\", () => {\r",
+							"    pm.response.to.be.ok;\r",
+							"    pm.response.to.have.status(200);\r",
+							"    pm.expect(pm.response.code).to.eql(200);\r",
+							"    pm.response.to.have.status(\"OK\");\r",
+							"    //pm.expect(pm.response.code).to.\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Validar que la respuesta sea en formato JSON\", function() {\r",
+							"    pm.response.to.be.json;\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Validar campos en el Body Response\", function() {\r",
+							"    const responseJSON = pm.response.json();\r",
+							"    console.log(\"Respuesta en JSON:\", responseJSON);\r",
+							"\r",
+							"    pm.expect(responseJSON.data.summary.total_cases).to.be.a(\"number\");\r",
+							"     pm.expect(responseJSON.data.summary.active_cases).to.be.a(\"number\");\r",
+							"      pm.expect(responseJSON.data.summary.deaths).to.be.a(\"number\");\r",
+							"    //pm.expect(responseJSON).to.eql(\"pong\");\r",
+							"    //pm.expect(responseJSON).to.be.a(\"string\");\r",
+							"    //pm.expect(responseJSON).to.have.lengthOf(4);\r",
+							"    pm.expect(responseJSON.country).to.be.undefined; //empty //null\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Validar que la Response tenga un texto\", function(){\r",
+							"    //console.log(\"Respuesta en Texto:\", pm.response.text());\r",
+							"    pm.expect(pm.response.text()).to.include('dat');\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Probar code status esté dentro de unos códigos\", () => {\r",
+							"pm.expect(pm.response.code).to.be.oneOf([200,201,204]);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Validar el tiempo de respuesta sea menor a 800 ms\", () => {\r",
+							"    pm.expect(pm.response.responseTime).to.be.below(800)\r",
+							"});\r",
+							"\r",
+							"//pm.test(\"Validar campos\", () => {\r",
+							"    //const responseJSON = pm.response.json();\r",
+							"    //pm.expect(responseJSON[0]).to.be.oneOf([\"country\", \"code\", \"confirmed\"]);\r",
+							"//});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://{{base-url}}/api/v1/summary/region?region=Mexico&sub_area=1",
+					"protocol": "http",
+					"host": [
+						"{{base-url}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"summary",
+						"region"
+					],
+					"query": [
+						{
+							"key": "region",
+							"value": "Mexico"
+						},
+						{
+							"key": "sub_area",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "API por Region ERROR",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Validar el código 404\", () => {\r",
+							"    pm.response.to.be.not.ok;\r",
+							"    pm.response.to.have.status(404);\r",
+							"    pm.expect(pm.response.code).to.eql(404);\r",
+							"    pm.response.to.have.status(\"Not Found\");\r",
+							"    //pm.expect(pm.response.code).to.\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Validar que la respuesta sea en formato JSON\", function() {\r",
+							"    pm.response.to.be.json;\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Validar campos en el Body Response\", function() {\r",
+							"    const responseJSON = pm.response.json();\r",
+							"    console.log(\"Respuesta en JSON:\", responseJSON);\r",
+							"    //console.log(\"Campo 1:\", responseJSON.country);\r",
+							"    //console.log(\"Campo 2:\", responseJSON[0].country);\r",
+							"   pm.expect(responseJSON.status).to.eql(404);\r",
+							"    pm.expect(responseJSON.message).to.be.a(\"string\");\r",
+							"    pm.expect(responseJSON.status).to.be.a(\"number\");\r",
+							"    pm.expect(responseJSON.type).to.have.lengthOf(5);\r",
+							"    pm.expect(responseJSON.country).to.be.undefined; //empty //null\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Validar que la Response tenga un texto\", function(){\r",
+							"    console.log(\"Respuesta en Texto:\", pm.response.text());\r",
+							"    pm.expect(pm.response.text()).to.include('stat');\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Probar code status esté dentro de unos códigos\", () => {\r",
+							"pm.expect(pm.response.code).to.be.oneOf([400,401,404]);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Validar el tiempo de respuesta sea menor a 500 ms\", () => {\r",
+							"    pm.expect(pm.response.responseTime).to.be.below(500)\r",
+							"});\r",
+							"\r",
+							"//pm.test(\"Validar campos\", () => {\r",
+							"    //const responseJSON = pm.response.json();\r",
+							"    //pm.expect(responseJSON[0]).to.be.oneOf([\"country\", \"code\", \"confirmed\"]);\r",
+							"//});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://{{base-url}}/api/v1/summary/region?region=Mejico&sub_area=1",
+					"protocol": "http",
+					"host": [
+						"{{base-url}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"summary",
+						"region"
+					],
+					"query": [
+						{
+							"key": "region",
+							"value": "Mejico"
+						},
+						{
+							"key": "sub_area",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "API por Región por Día ERROR",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Validar el código 500\", () => {\r",
+							"    pm.response.to.be.not.ok;\r",
+							"    pm.response.to.have.status(500);\r",
+							"    pm.expect(pm.response.code).to.eql(500);\r",
+							"    pm.response.to.have.status(\"Internal Server Error\");\r",
+							"});\r",
+							"\r",
+							"\r",
+							"\r",
+							"\r",
+							"pm.test(\"Validar que la Response tenga un texto\", function(){\r",
+							"    console.log(\"Respuesta en Texto:\", pm.response.text());\r",
+							"    pm.expect(pm.response.text()).to.include('link');\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Probar code status esté dentro de unos códigos\", () => {\r",
+							"pm.expect(pm.response.code).to.be.oneOf([500,501,504]);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Validar el tiempo de respuesta sea menor a 500 ms\", () => {\r",
+							"    pm.expect(pm.response.responseTime).to.be.below(500)\r",
+							"});\r",
+							"\r",
+							"//pm.test(\"Validar campos\", () => {\r",
+							"    //const responseJSON = pm.response.json();\r",
+							"    //pm.expect(responseJSON[0]).to.be.oneOf([\"country\", \"code\", \"confirmed\"]);\r",
+							"//});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://{{base-url}}/api/v1/spots/day?region=us",
+					"protocol": "https",
+					"host": [
+						"{{base-url}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"spots",
+						"day"
+					],
+					"query": [
+						{
+							"key": "region",
+							"value": "us"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "API por Región por Semana",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"const responseJSON = pm.response.json();\r",
+							"\r",
+							"console.log(\"Respuesta:\", responseJSON);\r",
+							"console.log(\"Respuesta Campo Status:\", responseJSON.status);\r",
+							"console.log(\"Respuesta Summary\", responseJSON.data.summary)\r",
+							"\r",
+							"pm.test(\"Probar el campo Status (200)\", () => {\r",
+							"    pm.expect(responseJSON.status).to.eql(200);\r",
+							"})\r",
+							"\r",
+							"pm.test(\"Validar el código 200\", () => {\r",
+							"    pm.response.to.be.ok;\r",
+							"    pm.response.to.have.status(200);\r",
+							"    pm.expect(pm.response.code).to.eql(200);\r",
+							"    pm.response.to.have.status(\"OK\");\r",
+							"    //pm.expect(pm.response.code).to.\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Validar que la respuesta sea en formato JSON\", function() {\r",
+							"    pm.response.to.be.json;\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Validar campos en el Body Response\", function() {\r",
+							"    const responseJSON = pm.response.json();\r",
+							"    console.log(\"Respuesta en JSON:\", responseJSON);\r",
+							"    console.log(\"Respuesta en JSON:\", responseJSON.data);\r",
+							"\r",
+							"    pm.expect((responseJSON.data['2021-02-27'].total_cases)).to.be.a(\"number\");\r",
+							"     pm.expect(responseJSON.data['2021-02-27'].tested).to.be.a(\"number\");\r",
+							"      pm.expect(responseJSON.data['2021-02-27'].deaths).to.be.a(\"number\");\r",
+							"    //pm.expect(responseJSON).to.eql(\"pong\");\r",
+							"    //pm.expect(responseJSON).to.be.a(\"string\");\r",
+							"    //pm.expect(responseJSON).to.have.lengthOf(4);\r",
+							"    pm.expect(responseJSON.country).to.be.undefined; //empty //null\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Validar que la Response tenga un texto\", function(){\r",
+							"    //console.log(\"Respuesta en Texto:\", pm.response.text());\r",
+							"    pm.expect(pm.response.text()).to.include('dat');\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Probar code status esté dentro de unos códigos\", () => {\r",
+							"pm.expect(pm.response.code).to.be.oneOf([200,201,204]);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Validar el tiempo de respuesta sea menor a 500 ms\", () => {\r",
+							"    pm.expect(pm.response.responseTime).to.be.below(500)\r",
+							"});\r",
+							"\r",
+							"//pm.test(\"Validar campos\", () => {\r",
+							"    //const responseJSON = pm.response.json();\r",
+							"    //pm.expect(responseJSON[0]).to.be.oneOf([\"country\", \"code\", \"confirmed\"]);\r",
+							"//});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://{{base-url}}/api/v1/spots/week?region=russia",
+					"protocol": "https",
+					"host": [
+						"{{base-url}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"spots",
+						"week"
+					],
+					"query": [
+						{
+							"key": "region",
+							"value": "russia"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "API por Región por Semana ERROR",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Validar el código 404\", () => {\r",
+							"    pm.response.to.be.not.ok;\r",
+							"    pm.response.to.have.status(404);\r",
+							"    pm.expect(pm.response.code).to.eql(404);\r",
+							"    pm.response.to.have.status(\"Not Found\");\r",
+							"    //pm.expect(pm.response.code).to.\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Validar que la respuesta sea en formato JSON\", function() {\r",
+							"    pm.response.to.be.json;\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Validar campos en el Body Response\", function() {\r",
+							"    const responseJSON = pm.response.json();\r",
+							"    console.log(\"Respuesta en JSON:\", responseJSON);\r",
+							"    //console.log(\"Campo 1:\", responseJSON.country);\r",
+							"    //console.log(\"Campo 2:\", responseJSON[0].country);\r",
+							"   pm.expect(responseJSON.status).to.eql(404);\r",
+							"    pm.expect(responseJSON.message).to.be.a(\"string\");\r",
+							"    pm.expect(responseJSON.status).to.be.a(\"number\");\r",
+							"    pm.expect(responseJSON.type).to.have.lengthOf(5);\r",
+							"    pm.expect(responseJSON.country).to.be.undefined; //empty //null\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Validar que la Response tenga un texto\", function(){\r",
+							"    console.log(\"Respuesta en Texto:\", pm.response.text());\r",
+							"    pm.expect(pm.response.text()).to.include('stat');\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Probar code status esté dentro de unos códigos\", () => {\r",
+							"pm.expect(pm.response.code).to.be.oneOf([400,401,404]);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Validar el tiempo de respuesta sea menor a 500 ms\", () => {\r",
+							"    pm.expect(pm.response.responseTime).to.be.below(500)\r",
+							"});\r",
+							"\r",
+							"//pm.test(\"Validar campos\", () => {\r",
+							"    //const responseJSON = pm.response.json();\r",
+							"    //pm.expect(responseJSON[0]).to.be.oneOf([\"country\", \"code\", \"confirmed\"]);\r",
+							"//});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://{{base-url}}/api/v1/spots/week?region=rusia",
+					"protocol": "https",
+					"host": [
+						"{{base-url}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"spots",
+						"week"
+					],
+					"query": [
+						{
+							"key": "region",
+							"value": "rusia"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "API por Región por Mes",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"const responseJSON = pm.response.json();\r",
+							"\r",
+							"console.log(\"Respuesta:\", responseJSON);\r",
+							"console.log(\"Respuesta Campo Status:\", responseJSON.status);\r",
+							"console.log(\"Respuesta Summary\", responseJSON.data.summary)\r",
+							"\r",
+							"pm.test(\"Probar el campo Status (200)\", () => {\r",
+							"    pm.expect(responseJSON.status).to.eql(200);\r",
+							"})\r",
+							"\r",
+							"pm.test(\"Validar el código 200\", () => {\r",
+							"    pm.response.to.be.ok;\r",
+							"    pm.response.to.have.status(200);\r",
+							"    pm.expect(pm.response.code).to.eql(200);\r",
+							"    pm.response.to.have.status(\"OK\");\r",
+							"    //pm.expect(pm.response.code).to.\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Validar que la respuesta sea en formato JSON\", function() {\r",
+							"    pm.response.to.be.json;\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Validar campos en el Body Response\", function() {\r",
+							"    const responseJSON = pm.response.json();\r",
+							"    console.log(\"Respuesta en JSON:\", responseJSON);\r",
+							"    console.log(\"Respuesta en JSON:\", responseJSON.data);\r",
+							"\r",
+							"     pm.expect((responseJSON.data['2021-02-27'].total_cases)).to.be.a(\"number\");\r",
+							"     pm.expect(responseJSON.data['2021-02-27'].tested).to.be.a(\"number\");\r",
+							"     pm.expect(responseJSON.data['2021-02-27'].deaths).to.be.a(\"number\");\r",
+							"    //pm.expect(responseJSON).to.eql(\"pong\");\r",
+							"    //pm.expect(responseJSON).to.be.a(\"string\");\r",
+							"    //pm.expect(responseJSON).to.have.lengthOf(4);\r",
+							"    pm.expect(responseJSON.country).to.be.undefined; //empty //null\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Validar que la Response tenga un texto\", function(){\r",
+							"    //console.log(\"Respuesta en Texto:\", pm.response.text());\r",
+							"    pm.expect(pm.response.text()).to.include('dat');\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Probar code status esté dentro de unos códigos\", () => {\r",
+							"pm.expect(pm.response.code).to.be.oneOf([200,201,204]);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Validar el tiempo de respuesta sea menor a 800 ms\", () => {\r",
+							"    pm.expect(pm.response.responseTime).to.be.below(800)\r",
+							"});\r",
+							"\r",
+							"//pm.test(\"Validar campos\", () => {\r",
+							"    //const responseJSON = pm.response.json();\r",
+							"    //pm.expect(responseJSON[0]).to.be.oneOf([\"country\", \"code\", \"confirmed\"]);\r",
+							"//});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://{{base-url}}/api/v1/spots/month?region=us",
+					"protocol": "https",
+					"host": [
+						"{{base-url}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"spots",
+						"month"
+					],
+					"query": [
+						{
+							"key": "region",
+							"value": "us"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "API por Región por Mes ERROR",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Validar el código 404\", () => {\r",
+							"    pm.response.to.be.not.ok;\r",
+							"    pm.response.to.have.status(404);\r",
+							"    pm.expect(pm.response.code).to.eql(404);\r",
+							"    pm.response.to.have.status(\"Not Found\");\r",
+							"    //pm.expect(pm.response.code).to.\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Validar que la respuesta sea en formato JSON\", function() {\r",
+							"    pm.response.to.be.json;\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Validar campos en el Body Response\", function() {\r",
+							"    const responseJSON = pm.response.json();\r",
+							"    console.log(\"Respuesta en JSON:\", responseJSON);\r",
+							"    //console.log(\"Campo 1:\", responseJSON.country);\r",
+							"    //console.log(\"Campo 2:\", responseJSON[0].country);\r",
+							"   pm.expect(responseJSON.status).to.eql(404);\r",
+							"    pm.expect(responseJSON.message).to.be.a(\"string\");\r",
+							"    pm.expect(responseJSON.status).to.be.a(\"number\");\r",
+							"    pm.expect(responseJSON.type).to.have.lengthOf(5);\r",
+							"    pm.expect(responseJSON.country).to.be.undefined; //empty //null\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Validar que la Response tenga un texto\", function(){\r",
+							"    console.log(\"Respuesta en Texto:\", pm.response.text());\r",
+							"    pm.expect(pm.response.text()).to.include('stat');\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Probar code status esté dentro de unos códigos\", () => {\r",
+							"pm.expect(pm.response.code).to.be.oneOf([400,401,404]);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Validar el tiempo de respuesta sea menor a 500 ms\", () => {\r",
+							"    pm.expect(pm.response.responseTime).to.be.below(500)\r",
+							"});\r",
+							"\r",
+							"//pm.test(\"Validar campos\", () => {\r",
+							"    //const responseJSON = pm.response.json();\r",
+							"    //pm.expect(responseJSON[0]).to.be.oneOf([\"country\", \"code\", \"confirmed\"]);\r",
+							"//});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://{{base-url}}/api/v1/spots/month?region=ussa",
+					"protocol": "https",
+					"host": [
+						"{{base-url}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"spots",
+						"month"
+					],
+					"query": [
+						{
+							"key": "region",
+							"value": "ussa"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "API por Región por Año",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"const responseJSON = pm.response.json();\r",
+							"\r",
+							"console.log(\"Respuesta:\", responseJSON);\r",
+							"console.log(\"Respuesta Campo Status:\", responseJSON.status);\r",
+							"console.log(\"Respuesta Summary\", responseJSON.data.summary)\r",
+							"\r",
+							"pm.test(\"Probar el campo Status (200)\", () => {\r",
+							"    pm.expect(responseJSON.status).to.eql(200);\r",
+							"})\r",
+							"\r",
+							"pm.test(\"Validar el código 200\", () => {\r",
+							"    pm.response.to.be.ok;\r",
+							"    pm.response.to.have.status(200);\r",
+							"    pm.expect(pm.response.code).to.eql(200);\r",
+							"    pm.response.to.have.status(\"OK\");\r",
+							"    //pm.expect(pm.response.code).to.\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Validar que la respuesta sea en formato JSON\", function() {\r",
+							"    pm.response.to.be.json;\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Validar campos en el Body Response\", function() {\r",
+							"    const responseJSON = pm.response.json();\r",
+							"    console.log(\"Respuesta en JSON:\", responseJSON);\r",
+							"    console.log(\"Respuesta en JSON:\", responseJSON.data);\r",
+							"\r",
+							"    pm.expect((responseJSON.data['2021-02-27'].total_cases)).to.be.a(\"number\");\r",
+							"     pm.expect(responseJSON.data['2021-02-27'].tested).to.be.a(\"number\");\r",
+							"      pm.expect(responseJSON.data['2021-02-27'].deaths).to.be.a(\"number\");\r",
+							"    //pm.expect(responseJSON).to.eql(\"pong\");\r",
+							"    //pm.expect(responseJSON).to.be.a(\"string\");\r",
+							"    //pm.expect(responseJSON).to.have.lengthOf(4);\r",
+							"    pm.expect(responseJSON.country).to.be.undefined; //empty //null\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Validar que la Response tenga un texto\", function(){\r",
+							"    //console.log(\"Respuesta en Texto:\", pm.response.text());\r",
+							"    pm.expect(pm.response.text()).to.include('dat');\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Probar code status esté dentro de unos códigos\", () => {\r",
+							"pm.expect(pm.response.code).to.be.oneOf([200,201,204]);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Validar el tiempo de respuesta sea menor a 500 ms\", () => {\r",
+							"    pm.expect(pm.response.responseTime).to.be.below(500)\r",
+							"});\r",
+							"\r",
+							"//pm.test(\"Validar campos\", () => {\r",
+							"    //const responseJSON = pm.response.json();\r",
+							"    //pm.expect(responseJSON[0]).to.be.oneOf([\"country\", \"code\", \"confirmed\"]);\r",
+							"//});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://{{base-url}}/api/v1/spots/year?region=china",
+					"protocol": "https",
+					"host": [
+						"{{base-url}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"spots",
+						"year"
+					],
+					"query": [
+						{
+							"key": "region",
+							"value": "china"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "API por Región por Año ERROR",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Validar el código 404\", () => {\r",
+							"    pm.response.to.be.not.ok;\r",
+							"    pm.response.to.have.status(404);\r",
+							"    pm.expect(pm.response.code).to.eql(404);\r",
+							"    pm.response.to.have.status(\"Not Found\");\r",
+							"    //pm.expect(pm.response.code).to.\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Validar que la respuesta sea en formato JSON\", function() {\r",
+							"    pm.response.to.be.json;\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Validar campos en el Body Response\", function() {\r",
+							"    const responseJSON = pm.response.json();\r",
+							"    console.log(\"Respuesta en JSON:\", responseJSON);\r",
+							"    //console.log(\"Campo 1:\", responseJSON.country);\r",
+							"    //console.log(\"Campo 2:\", responseJSON[0].country);\r",
+							"   pm.expect(responseJSON.status).to.eql(404);\r",
+							"    pm.expect(responseJSON.message).to.be.a(\"string\");\r",
+							"    pm.expect(responseJSON.status).to.be.a(\"number\");\r",
+							"    pm.expect(responseJSON.type).to.have.lengthOf(5);\r",
+							"    pm.expect(responseJSON.country).to.be.undefined; //empty //null\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Validar que la Response tenga un texto\", function(){\r",
+							"    console.log(\"Respuesta en Texto:\", pm.response.text());\r",
+							"    pm.expect(pm.response.text()).to.include('stat');\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Probar code status esté dentro de unos códigos\", () => {\r",
+							"pm.expect(pm.response.code).to.be.oneOf([400,401,404]);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Validar el tiempo de respuesta sea menor a 500 ms\", () => {\r",
+							"    pm.expect(pm.response.responseTime).to.be.below(500)\r",
+							"});\r",
+							"\r",
+							"//pm.test(\"Validar campos\", () => {\r",
+							"    //const responseJSON = pm.response.json();\r",
+							"    //pm.expect(responseJSON[0]).to.be.oneOf([\"country\", \"code\", \"confirmed\"]);\r",
+							"//});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://{{base-url}}/api/v1/spots/year?region=xina",
+					"protocol": "https",
+					"host": [
+						"{{base-url}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"spots",
+						"year"
+					],
+					"query": [
+						{
+							"key": "region",
+							"value": "xina"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "API Histórico Diario por Región",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"const responseJSON = pm.response.json();\r",
+							"\r",
+							"console.log(\"Respuesta:\", responseJSON);\r",
+							"console.log(\"Respuesta Campo Status:\", responseJSON.status);\r",
+							"console.log(\"Respuesta Summary\", responseJSON.data.summary)\r",
+							"\r",
+							"pm.test(\"Probar el campo Status (200)\", () => {\r",
+							"    pm.expect(responseJSON.status).to.eql(200);\r",
+							"})\r",
+							"\r",
+							"pm.test(\"Validar el código 200\", () => {\r",
+							"    pm.response.to.be.ok;\r",
+							"    pm.response.to.have.status(200);\r",
+							"    pm.expect(pm.response.code).to.eql(200);\r",
+							"    pm.response.to.have.status(\"OK\");\r",
+							"    //pm.expect(pm.response.code).to.\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Validar que la respuesta sea en formato JSON\", function() {\r",
+							"    pm.response.to.be.json;\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Validar campos en el Body Response\", function() {\r",
+							"    const responseJSON = pm.response.json();\r",
+							"    console.log(\"Respuesta en JSON:\", responseJSON);\r",
+							"    console.log(\"Respuesta en JSON:\", responseJSON.data);\r",
+							"\r",
+							"     pm.expect((responseJSON.data['2021-02-27'].total_cases)).to.be.a(\"number\");\r",
+							"     pm.expect(responseJSON.data['2021-02-27'].tested).to.be.a(\"number\");\r",
+							"      pm.expect(responseJSON.data['2021-02-27'].deaths).to.be.a(\"number\");\r",
+							"    //pm.expect(responseJSON).to.eql(\"pong\");\r",
+							"    //pm.expect(responseJSON).to.be.a(\"string\");\r",
+							"    //pm.expect(responseJSON).to.have.lengthOf(4);\r",
+							"    pm.expect(responseJSON.country).to.be.undefined; //empty //null\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Validar que la Response tenga un texto\", function(){\r",
+							"    //console.log(\"Respuesta en Texto:\", pm.response.text());\r",
+							"    pm.expect(pm.response.text()).to.include('dat');\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Probar code status esté dentro de unos códigos\", () => {\r",
+							"pm.expect(pm.response.code).to.be.oneOf([200,201,204]);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Validar el tiempo de respuesta sea menor a 500 ms\", () => {\r",
+							"    pm.expect(pm.response.responseTime).to.be.below(500)\r",
+							"});\r",
+							"\r",
+							"//pm.test(\"Validar campos\", () => {\r",
+							"    //const responseJSON = pm.response.json();\r",
+							"    //pm.expect(responseJSON[0]).to.be.oneOf([\"country\", \"code\", \"confirmed\"]);\r",
+							"//});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://{{base-url}}/api/v1/spots/region?region=china",
+					"protocol": "https",
+					"host": [
+						"{{base-url}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"spots",
+						"region"
+					],
+					"query": [
+						{
+							"key": "region",
+							"value": "china"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "API Histórico Diario por Región ERROR",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Validar el código 404\", () => {\r",
+							"    pm.response.to.be.not.ok;\r",
+							"    pm.response.to.have.status(404);\r",
+							"    pm.expect(pm.response.code).to.eql(404);\r",
+							"    pm.response.to.have.status(\"Not Found\");\r",
+							"    //pm.expect(pm.response.code).to.\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Validar que la respuesta sea en formato JSON\", function() {\r",
+							"    pm.response.to.be.json;\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Validar campos en el Body Response\", function() {\r",
+							"    const responseJSON = pm.response.json();\r",
+							"    console.log(\"Respuesta en JSON:\", responseJSON);\r",
+							"    //console.log(\"Campo 1:\", responseJSON.country);\r",
+							"    //console.log(\"Campo 2:\", responseJSON[0].country);\r",
+							"   pm.expect(responseJSON.status).to.eql(404);\r",
+							"    pm.expect(responseJSON.message).to.be.a(\"string\");\r",
+							"    pm.expect(responseJSON.status).to.be.a(\"number\");\r",
+							"    pm.expect(responseJSON.type).to.have.lengthOf(5);\r",
+							"    pm.expect(responseJSON.country).to.be.undefined; //empty //null\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Validar que la Response tenga un texto\", function(){\r",
+							"    console.log(\"Respuesta en Texto:\", pm.response.text());\r",
+							"    pm.expect(pm.response.text()).to.include('stat');\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Probar code status esté dentro de unos códigos\", () => {\r",
+							"pm.expect(pm.response.code).to.be.oneOf([400,401,404]);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Validar el tiempo de respuesta sea menor a 500 ms\", () => {\r",
+							"    pm.expect(pm.response.responseTime).to.be.below(500)\r",
+							"});\r",
+							"\r",
+							"//pm.test(\"Validar campos\", () => {\r",
+							"    //const responseJSON = pm.response.json();\r",
+							"    //pm.expect(responseJSON[0]).to.be.oneOf([\"country\", \"code\", \"confirmed\"]);\r",
+							"//});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://{{base-url}}/api/v1/spots/region?region=cina",
+					"protocol": "https",
+					"host": [
+						"{{base-url}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"spots",
+						"region"
+					],
+					"query": [
+						{
+							"key": "region",
+							"value": "cina"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "API Histórico Diario Mundial",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"const responseJSON = pm.response.json();\r",
+							"\r",
+							"console.log(\"Respuesta:\", responseJSON);\r",
+							"console.log(\"Respuesta Campo Status:\", responseJSON.status);\r",
+							"console.log(\"Respuesta Summary\", responseJSON.data.summary)\r",
+							"\r",
+							"pm.test(\"Probar el campo Status (200)\", () => {\r",
+							"    pm.expect(responseJSON.status).to.eql(200);\r",
+							"})\r",
+							"\r",
+							"pm.test(\"Validar el código 200\", () => {\r",
+							"    pm.response.to.be.ok;\r",
+							"    pm.response.to.have.status(200);\r",
+							"    pm.expect(pm.response.code).to.eql(200);\r",
+							"    pm.response.to.have.status(\"OK\");\r",
+							"    //pm.expect(pm.response.code).to.\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Validar que la respuesta sea en formato JSON\", function() {\r",
+							"    pm.response.to.be.json;\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Validar campos en el Body Response\", function() {\r",
+							"    const responseJSON = pm.response.json();\r",
+							"    console.log(\"Respuesta en JSON:\", responseJSON);\r",
+							"    console.log(\"Respuesta en JSON:\", responseJSON.data['2021-02-27']);\r",
+							"\r",
+							"     pm.expect((responseJSON.data['2021-02-27'].total_cases)).to.be.a(\"number\");\r",
+							"     pm.expect(responseJSON.data['2021-02-27'].tested).to.be.a(\"number\");\r",
+							"      pm.expect(responseJSON.data['2021-02-27'].deaths).to.be.a(\"number\");\r",
+							"    //pm.expect(responseJSON).to.eql(\"pong\");\r",
+							"    //pm.expect(responseJSON).to.be.a(\"string\");\r",
+							"    //pm.expect(responseJSON).to.have.lengthOf(4);\r",
+							"    pm.expect(responseJSON.country).to.be.undefined; //empty //null\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Validar que la Response tenga un texto\", function(){\r",
+							"    //console.log(\"Respuesta en Texto:\", pm.response.text());\r",
+							"    pm.expect(pm.response.text()).to.include('dat');\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Probar code status esté dentro de unos códigos\", () => {\r",
+							"pm.expect(pm.response.code).to.be.oneOf([200,201,204]);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Validar el tiempo de respuesta sea menor a 1500 ms\", () => {\r",
+							"    pm.expect(pm.response.responseTime).to.be.below(1500)\r",
+							"});\r",
+							"\r",
+							"//pm.test(\"Validar campos\", () => {\r",
+							"    //const responseJSON = pm.response.json();\r",
+							"    //pm.expect(responseJSON[0]).to.be.oneOf([\"country\", \"code\", \"confirmed\"]);\r",
+							"//});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://{{base-url}}/api/v1/spots/summary",
+					"protocol": "https",
+					"host": [
+						"{{base-url}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"spots",
+						"summary"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "API Histórico Diario Mundial ERROR",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Validar el código 400\", () => {\r",
+							"    pm.response.to.be.not.ok;\r",
+							"    pm.response.to.have.status(404);\r",
+							"    pm.expect(pm.response.code).to.eql(404);\r",
+							"    pm.response.to.have.status(\"Not Found\");\r",
+							"    //pm.expect(pm.response.code).to.\r",
+							"});\r",
+							"\r",
+							"\r",
+							"\r",
+							"pm.test(\"Probar code status esté dentro de unos códigos\", () => {\r",
+							"pm.expect(pm.response.code).to.be.oneOf([400,401,404]);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Validar el tiempo de respuesta sea menor a 500 ms\", () => {\r",
+							"    pm.expect(pm.response.responseTime).to.be.below(500)\r",
+							"});\r",
+							"\r",
+							"//pm.test(\"Validar campos\", () => {\r",
+							"    //const responseJSON = pm.response.json();\r",
+							"    //pm.expect(responseJSON[0]).to.be.oneOf([\"country\", \"code\", \"confirmed\"]);\r",
+							"//});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://{{base-url}}/api/v1/spots/sumary",
+					"protocol": "https",
+					"host": [
+						"{{base-url}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"spots",
+						"sumary"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

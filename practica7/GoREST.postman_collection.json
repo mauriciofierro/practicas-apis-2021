@@ -1,0 +1,751 @@
+{
+	"info": {
+		"_postman_id": "c68ed0ac-6ebb-4556-8371-ad94bc1e3eb0",
+		"name": "GoREST",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "GET All Users",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Validar el codigo 200\", () => {\r",
+							"    pm.response.to.be.ok;\r",
+							"    pm.response.to.have.status(200);\r",
+							"    pm.expect(pm.response.code).to.eql(200);\r",
+							"    pm.response.to.have.status(\"OK\");\r",
+							"    //pm.expect(pm.response.code.name).to.has('OK');\r",
+							"});\r",
+							"pm.test(\"Validar la respuesta en formato JSON\", () =>{\r",
+							"    pm.response.to.be.json;\r",
+							"});\r",
+							"pm.test(\"Validar campos en el body response\", function (){\r",
+							"    const responseJson = pm.response.json();\r",
+							"    console.log (\"Respuesta en formato Json: \", responseJson.data[0]);\r",
+							"    pm.expect(responseJson.data[0].id).to.eql(1);\r",
+							"    pm.expect(responseJson.data[0].name).to.be.a(\"string\");\r",
+							"    pm.expect(responseJson.data[0].id).to.be.a(\"number\");\r",
+							"\r",
+							"\r",
+							"});\r",
+							"pm.test(\"Validar la respuesta incluye un texto\", () =>{\r",
+							"    console.log(\"Respuesta formato Texto: \", pm.response.text)\r",
+							"    pm.expect(pm.response.text()).to.include('name')\r",
+							"});\r",
+							"pm.test(\"Probar code status este dentro de unos codigos\", () =>{\r",
+							"    pm.expect(pm.response.code).to.be.oneOf([200,201,204]);\r",
+							"});\r",
+							"pm.test(\"Validar el tiempo de respeusta menor a 500ms\", () => {\r",
+							"    pm.expect(pm.response.responseTime).to.be.below(1500);\r",
+							"});\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://{{base-url}}/public-api/users",
+					"protocol": "https",
+					"host": [
+						"{{base-url}}"
+					],
+					"path": [
+						"public-api",
+						"users"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "CREATE Users Fail",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Validar el codigo 200\", () => {\r",
+							"    pm.response.to.be.ok;\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"pm.test(\"Validar la respuesta en formato JSON\", () =>{\r",
+							"    pm.response.to.be.json;\r",
+							"});\r",
+							"pm.test(\"Validar campos en el body response\", function (){\r",
+							"    const responseJson = pm.response.json();\r",
+							"    console.log (\"Respuesta en formato Json: \", responseJson);\r",
+							"    pm.expect(responseJson.data.message).to.eq(\"Authentication failed\");\r",
+							"    \r",
+							"});\r",
+							"\r",
+							"pm.test(\"Validar la respuesta incluye un texto\", () =>{\r",
+							"    console.log(\"Respuesta formato Texto: \", pm.response.text)\r",
+							"    pm.expect(pm.response.text()).to.include('message')\r",
+							"});\r",
+							"pm.test(\"Probar code status este dentro de unos codigos\", () =>{\r",
+							"    pm.expect(pm.response.code).to.be.oneOf([200,201,204]);\r",
+							"});\r",
+							"pm.test(\"Validar el tiempo de respeusta menor a 500ms\", () => {\r",
+							"    pm.expect(pm.response.responseTime).to.be.below(1500);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Validar código en el JSON de respuesta\", () => {\r",
+							"const responseJSON = pm.response.json();\r",
+							"pm.expect(responseJSON.code).to.be.oneOf([400, 401, 404]);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "https://{{base-url}}/public-api/users",
+					"protocol": "https",
+					"host": [
+						"{{base-url}}"
+					],
+					"path": [
+						"public-api",
+						"users"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "CREATE Users",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Validar el codigo 200\", () => {\r",
+							"    pm.response.to.be.ok;\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"pm.test(\"Validar la respuesta en formato JSON\", () =>{\r",
+							"    pm.response.to.be.json;\r",
+							"});\r",
+							"pm.test(\"Validar campos en el body response\", function (){\r",
+							"    const responseJson = pm.response.json();\r",
+							"    console.log (\"Respuesta en formato Json: \", responseJson);\r",
+							"    pm.expect(responseJson.data.message).to.eq(\"Authentication failed\");\r",
+							"    \r",
+							"});\r",
+							"\r",
+							"pm.test(\"Validar la respuesta incluye un texto\", () =>{\r",
+							"    console.log(\"Respuesta formato Texto: \", pm.response.text)\r",
+							"    pm.expect(pm.response.text()).to.include('message')\r",
+							"});\r",
+							"pm.test(\"Probar code status este dentro de unos codigos\", () =>{\r",
+							"    pm.expect(pm.response.code).to.be.oneOf([200,201,204]);\r",
+							"});\r",
+							"pm.test(\"Validar el tiempo de respeusta menor a 500ms\", () => {\r",
+							"    pm.expect(pm.response.responseTime).to.be.below(1500);\r",
+							"});\r",
+							"\r",
+							"const responseJSON = pm.response.json();\r",
+							"postman.setEnvironmentVariable(\"user_id\", responseJSON.data.id)"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"Marina Gonzel\",\r\n    \"gender\": \"Female\",\r\n    \"email\": \"marina.g@emerson.com\",\r\n    \"status\": \"Active\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://{{base-url}}/public-api/users",
+					"protocol": "https",
+					"host": [
+						"{{base-url}}"
+					],
+					"path": [
+						"public-api",
+						"users"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET Single User",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Validar el codigo 200\", () => {\r",
+							"    pm.response.to.be.ok;\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"pm.test(\"Validar la respuesta en formato JSON\", () =>{\r",
+							"    pm.response.to.be.json;\r",
+							"});\r",
+							"pm.test(\"Validar campos en el body response\", function (){\r",
+							"    const responseJson = pm.response.json();\r",
+							"    console.log (\"Respuesta en formato Json: \", responseJson);\r",
+							"    pm.expect(responseJson.data.id).to.be.a(\"number\");\r",
+							"    \r",
+							"});\r",
+							"\r",
+							"pm.test(\"Validar la respuesta incluye un texto\", () =>{\r",
+							"    console.log(\"Respuesta formato Texto: \", pm.response.text)\r",
+							"    pm.expect(pm.response.text()).to.include('id')\r",
+							"});\r",
+							"pm.test(\"Probar code status este dentro de unos codigos\", () =>{\r",
+							"    pm.expect(pm.response.code).to.be.oneOf([200,201,204]);\r",
+							"});\r",
+							"pm.test(\"Validar el tiempo de respeusta menor a 500ms\", () => {\r",
+							"    pm.expect(pm.response.responseTime).to.be.below(1500);\r",
+							"});\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://{{base-url}}/public-api/users/{{user_id}}",
+					"protocol": "https",
+					"host": [
+						"{{base-url}}"
+					],
+					"path": [
+						"public-api",
+						"users",
+						"{{user_id}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "PATCH Single User",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Validar el codigo 200\", () => {\r",
+							"    pm.response.to.be.ok;\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"pm.test(\"Validar la respuesta en formato JSON\", () =>{\r",
+							"    pm.response.to.be.json;\r",
+							"});\r",
+							"pm.test(\"Validar campos en el body response\", function (){\r",
+							"    const responseJson = pm.response.json();\r",
+							"    console.log (\"Respuesta en formato Json: \", responseJson);\r",
+							"    pm.expect(responseJson.data.status).to.eq(\"Active\");\r",
+							"    \r",
+							"});\r",
+							"\r",
+							"pm.test(\"Validar la respuesta incluye un texto\", () =>{\r",
+							"    console.log(\"Respuesta formato Texto: \", pm.response.text)\r",
+							"    pm.expect(pm.response.text()).to.include('email')\r",
+							"});\r",
+							"pm.test(\"Probar code status este dentro de unos codigos\", () =>{\r",
+							"    pm.expect(pm.response.code).to.be.oneOf([200,201,204]);\r",
+							"});\r",
+							"pm.test(\"Validar el tiempo de respeusta menor a 500ms\", () => {\r",
+							"    pm.expect(pm.response.responseTime).to.be.below(1500);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"Ma Go\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://{{base-url}}/public-api/users/{{user_id}}",
+					"protocol": "https",
+					"host": [
+						"{{base-url}}"
+					],
+					"path": [
+						"public-api",
+						"users",
+						"{{user_id}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "POST a Publication",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"const responseJSON = pm.response.json();\r",
+							"postman.setEnvironmentVariable(\"post_id\", responseJSON.data.id)\r",
+							"\r",
+							"pm.test(\"Validar el codigo 200\", () => {\r",
+							"    pm.response.to.be.ok;\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"pm.test(\"Validar la respuesta en formato JSON\", () =>{\r",
+							"    pm.response.to.be.json;\r",
+							"});\r",
+							"pm.test(\"Validar campos en el body response\", function (){\r",
+							"    const responseJson = pm.response.json();\r",
+							"    console.log (\"Respuesta en formato Json: \", responseJson);\r",
+							"    pm.expect(responseJson.data.id).to.be.a(\"number\");\r",
+							"    \r",
+							"});\r",
+							"\r",
+							"pm.test(\"Validar la respuesta incluye un texto\", () =>{\r",
+							"    console.log(\"Respuesta formato Texto: \", pm.response.text)\r",
+							"    pm.expect(pm.response.text()).to.include('created')\r",
+							"});\r",
+							"pm.test(\"Probar code status este dentro de unos codigos\", () =>{\r",
+							"    pm.expect(pm.response.code).to.be.oneOf([200,201,204]);\r",
+							"});\r",
+							"pm.test(\"Validar el tiempo de respeusta menor a 500ms\", () => {\r",
+							"    pm.expect(pm.response.responseTime).to.be.below(1500);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"title\": \"O M G! Look at her butte!\",\r\n    \"body\": \"I can't believe Taylor Swift sings this, amirite?!\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://{{base-url}}/public-api/users/{{user_id}}/posts",
+					"protocol": "https",
+					"host": [
+						"{{base-url}}"
+					],
+					"path": [
+						"public-api",
+						"users",
+						"{{user_id}}",
+						"posts"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET User Posts on Page",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Validar el codigo 200\", () => {\r",
+							"    pm.response.to.be.ok;\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"pm.test(\"Validar la respuesta en formato JSON\", () =>{\r",
+							"    pm.response.to.be.json;\r",
+							"});\r",
+							"pm.test(\"Validar campos en el body response\", function (){\r",
+							"    const responseJson = pm.response.json();\r",
+							"    console.log (\"Respuesta en formato Json: \", responseJson);\r",
+							"    pm.expect(responseJson.data[0].id).to.be.a(\"number\");\r",
+							"    \r",
+							"});\r",
+							"\r",
+							"pm.test(\"Validar la respuesta incluye un texto\", () =>{\r",
+							"    console.log(\"Respuesta formato Texto: \", pm.response.text)\r",
+							"    pm.expect(pm.response.text()).to.include('title')\r",
+							"});\r",
+							"pm.test(\"Probar code status este dentro de unos codigos\", () =>{\r",
+							"    pm.expect(pm.response.code).to.be.oneOf([200,201,204]);\r",
+							"});\r",
+							"pm.test(\"Validar el tiempo de respeusta menor a 500ms\", () => {\r",
+							"    pm.expect(pm.response.responseTime).to.be.below(1500);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://{{base-url}}/public-api/users/{{user_id}}/posts",
+					"protocol": "https",
+					"host": [
+						"{{base-url}}"
+					],
+					"path": [
+						"public-api",
+						"users",
+						"{{user_id}}",
+						"posts"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "POST A Comment on Publication",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Validar el codigo 200\", () => {\r",
+							"    pm.response.to.be.ok;\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"pm.test(\"Validar la respuesta en formato JSON\", () =>{\r",
+							"    pm.response.to.be.json;\r",
+							"});\r",
+							"pm.test(\"Validar campos en el body response\", function (){\r",
+							"    const responseJson = pm.response.json();\r",
+							"    console.log (\"Respuesta en formato Json: \", responseJson);\r",
+							"    pm.expect(responseJson.data.email).to.be.a(\"string\");\r",
+							"    \r",
+							"});\r",
+							"\r",
+							"pm.test(\"Validar la respuesta incluye un texto\", () =>{\r",
+							"    console.log(\"Respuesta formato Texto: \", pm.response.text)\r",
+							"    pm.expect(pm.response.text()).to.include('email')\r",
+							"});\r",
+							"pm.test(\"Probar code status este dentro de unos codigos\", () =>{\r",
+							"    pm.expect(pm.response.code).to.be.oneOf([200,201,204]);\r",
+							"});\r",
+							"pm.test(\"Validar el tiempo de respeusta menor a 500ms\", () => {\r",
+							"    pm.expect(pm.response.responseTime).to.be.below(1500);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\":\"Chuchita Perez\",\r\n    \"email\":\"the.chuchs@no-reply.com\",\r\n    \"body\": \"I know, riiiiiteeee?!\"\r\n\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://{{base-url}}/public-api/posts/{{post_id}}/comments",
+					"protocol": "https",
+					"host": [
+						"{{base-url}}"
+					],
+					"path": [
+						"public-api",
+						"posts",
+						"{{post_id}}",
+						"comments"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET A Post's Comments",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Validar el codigo 200\", () => {\r",
+							"    pm.response.to.be.ok;\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"pm.test(\"Validar la respuesta en formato JSON\", () =>{\r",
+							"    pm.response.to.be.json;\r",
+							"});\r",
+							"pm.test(\"Validar campos en el body response\", function (){\r",
+							"    const responseJson = pm.response.json();\r",
+							"    console.log (\"Respuesta en formato Json: \", responseJson);\r",
+							"    pm.expect(responseJson.data[0].post_id).to.be.a(\"number\");\r",
+							"    \r",
+							"});\r",
+							"\r",
+							"pm.test(\"Validar la respuesta incluye un texto\", () =>{\r",
+							"    console.log(\"Respuesta formato Texto: \", pm.response.text)\r",
+							"    pm.expect(pm.response.text()).to.include('email')\r",
+							"});\r",
+							"pm.test(\"Probar code status este dentro de unos codigos\", () =>{\r",
+							"    pm.expect(pm.response.code).to.be.oneOf([200,201,204]);\r",
+							"});\r",
+							"pm.test(\"Validar el tiempo de respeusta menor a 500ms\", () => {\r",
+							"    pm.expect(pm.response.responseTime).to.be.below(1500);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://{{base-url}}/public-api/posts/{{post_id}}/comments",
+					"protocol": "https",
+					"host": [
+						"{{base-url}}"
+					],
+					"path": [
+						"public-api",
+						"posts",
+						"{{post_id}}",
+						"comments"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET a User's ToDo's",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Validar el codigo 200\", () => {\r",
+							"    pm.response.to.be.ok;\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"pm.test(\"Validar la respuesta en formato JSON\", () =>{\r",
+							"    pm.response.to.be.json;\r",
+							"});\r",
+							"pm.test(\"Validar campos en el body response\", function (){\r",
+							"    const responseJson = pm.response.json();\r",
+							"    console.log (\"Respuesta en formato Json: \", responseJson);\r",
+							"    pm.expect(responseJson.data[0].user_id).to.be.a(\"number\");\r",
+							"    \r",
+							"});\r",
+							"\r",
+							"pm.test(\"Validar la respuesta incluye un texto\", () =>{\r",
+							"    console.log(\"Respuesta formato Texto: \", pm.response.text)\r",
+							"    pm.expect(pm.response.text()).to.include('completed')\r",
+							"});\r",
+							"pm.test(\"Probar code status este dentro de unos codigos\", () =>{\r",
+							"    pm.expect(pm.response.code).to.be.oneOf([200,201,204]);\r",
+							"});\r",
+							"pm.test(\"Validar el tiempo de respeusta menor a 500ms\", () => {\r",
+							"    pm.expect(pm.response.responseTime).to.be.below(1500);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://{{base-url}}/public-api/users/{{user_id}}/todos",
+					"protocol": "https",
+					"host": [
+						"{{base-url}}"
+					],
+					"path": [
+						"public-api",
+						"users",
+						"{{user_id}}",
+						"todos"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "POST a To-Do to a User",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Validar el codigo 200\", () => {\r",
+							"    pm.response.to.be.ok;\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"pm.test(\"Validar la respuesta en formato JSON\", () =>{\r",
+							"    pm.response.to.be.json;\r",
+							"});\r",
+							"pm.test(\"Validar campos en el body response\", function (){\r",
+							"    const responseJson = pm.response.json();\r",
+							"    console.log (\"Respuesta en formato Json: \", responseJson);\r",
+							"    pm.expect(responseJson.data.user_id).to.be.a(\"number\");\r",
+							"    \r",
+							"});\r",
+							"\r",
+							"pm.test(\"Validar la respuesta incluye un texto\", () =>{\r",
+							"    console.log(\"Respuesta formato Texto: \", pm.response.text)\r",
+							"    pm.expect(pm.response.text()).to.include('completed');\r",
+							"});\r",
+							"pm.test(\"Probar code status este dentro de unos codigos\", () =>{\r",
+							"    pm.expect(pm.response.code).to.be.oneOf([200,201,204]);\r",
+							"});\r",
+							"pm.test(\"Validar el tiempo de respeusta menor a 500ms\", () => {\r",
+							"    pm.expect(pm.response.responseTime).to.be.below(1500);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"title\": \"Brush your teeth before you go to bed.\",\r\n    \"completed\": true\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://{{base-url}}/public-api/users/{{user_id}}/todos",
+					"protocol": "https",
+					"host": [
+						"{{base-url}}"
+					],
+					"path": [
+						"public-api",
+						"users",
+						"{{user_id}}",
+						"todos"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
