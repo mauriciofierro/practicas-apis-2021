@@ -25,9 +25,9 @@
 							"pm.test(\"Validar campos en el body response\", function (){\r",
 							"    const responseJson = pm.response.json();\r",
 							"    console.log (\"Respuesta en formato Json: \", responseJson.data[0]);\r",
-							"    pm.expect(responseJson.data[0].id).to.eql(1);\r",
-							"    pm.expect(responseJson.data[0].name).to.be.a(\"string\");\r",
-							"    pm.expect(responseJson.data[0].id).to.be.a(\"number\");\r",
+							"    pm.expect(responseJson.data[1].id).to.eql(6);\r",
+							"    pm.expect(responseJson.data[1].name).to.be.a(\"string\");\r",
+							"    pm.expect(responseJson.data[1].id).to.be.a(\"number\");\r",
 							"\r",
 							"\r",
 							"});\r",
@@ -176,7 +176,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"name\": \"Marina Gonzel\",\r\n    \"gender\": \"Female\",\r\n    \"email\": \"marina.g@emerson.com\",\r\n    \"status\": \"Active\"\r\n}",
+					"raw": "{\r\n    \"name\": \"Zelda Fitzgerald\",\r\n    \"gender\": \"Female\",\r\n    \"email\": \"zelda.f@emerson.com\",\r\n    \"status\": \"Active\"\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -303,7 +303,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"name\": \"Ma Go\"\r\n}",
+					"raw": "{\r\n    \"name\": \"Zelda Williams\"\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -379,7 +379,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"title\": \"O M G! Look at her butte!\",\r\n    \"body\": \"I can't believe Taylor Swift sings this, amirite?!\"\r\n}",
+					"raw": "{\r\n    \"title\": \"Whose name is the Princess's?\",\r\n    \"body\": \"It's because of F. Scott Fitzgerlad's wife, of course!\"\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -518,7 +518,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"name\":\"Chuchita Perez\",\r\n    \"email\":\"the.chuchs@no-reply.com\",\r\n    \"body\": \"I know, riiiiiteeee?!\"\r\n\r\n}",
+					"raw": "{\r\n    \"name\":\"Chuchita Perez\",\r\n    \"email\":\"the.chuchs@no-reply.com\",\r\n    \"body\": \"I did not know that! Thank you for enlightening us!\"\r\n\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -619,61 +619,6 @@
 			"response": []
 		},
 		{
-			"name": "GET a User's ToDo's",
-			"event": [
-				{
-					"listen": "test",
-					"script": {
-						"exec": [
-							"pm.test(\"Validar el codigo 200\", () => {\r",
-							"    pm.response.to.be.ok;\r",
-							"    pm.response.to.have.status(200);\r",
-							"});\r",
-							"pm.test(\"Validar la respuesta en formato JSON\", () =>{\r",
-							"    pm.response.to.be.json;\r",
-							"});\r",
-							"pm.test(\"Validar campos en el body response\", function (){\r",
-							"    const responseJson = pm.response.json();\r",
-							"    console.log (\"Respuesta en formato Json: \", responseJson);\r",
-							"    pm.expect(responseJson.data[0].user_id).to.be.a(\"number\");\r",
-							"    \r",
-							"});\r",
-							"\r",
-							"pm.test(\"Validar la respuesta incluye un texto\", () =>{\r",
-							"    console.log(\"Respuesta formato Texto: \", pm.response.text)\r",
-							"    pm.expect(pm.response.text()).to.include('completed')\r",
-							"});\r",
-							"pm.test(\"Probar code status este dentro de unos codigos\", () =>{\r",
-							"    pm.expect(pm.response.code).to.be.oneOf([200,201,204]);\r",
-							"});\r",
-							"pm.test(\"Validar el tiempo de respeusta menor a 500ms\", () => {\r",
-							"    pm.expect(pm.response.responseTime).to.be.below(1500);\r",
-							"});"
-						],
-						"type": "text/javascript"
-					}
-				}
-			],
-			"request": {
-				"method": "GET",
-				"header": [],
-				"url": {
-					"raw": "https://{{base-url}}/public-api/users/{{user_id}}/todos",
-					"protocol": "https",
-					"host": [
-						"{{base-url}}"
-					],
-					"path": [
-						"public-api",
-						"users",
-						"{{user_id}}",
-						"todos"
-					]
-				}
-			},
-			"response": []
-		},
-		{
 			"name": "POST a To-Do to a User",
 			"event": [
 				{
@@ -724,13 +669,68 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"title\": \"Brush your teeth before you go to bed.\",\r\n    \"completed\": true\r\n}",
+					"raw": "{\r\n    \"title\": \"Brush your teeth before you go to bed!\",\r\n    \"completed\": true\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
 						}
 					}
 				},
+				"url": {
+					"raw": "https://{{base-url}}/public-api/users/{{user_id}}/todos",
+					"protocol": "https",
+					"host": [
+						"{{base-url}}"
+					],
+					"path": [
+						"public-api",
+						"users",
+						"{{user_id}}",
+						"todos"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET a User's ToDo's",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Validar el codigo 200\", () => {\r",
+							"    pm.response.to.be.ok;\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"pm.test(\"Validar la respuesta en formato JSON\", () =>{\r",
+							"    pm.response.to.be.json;\r",
+							"});\r",
+							"pm.test(\"Validar campos en el body response\", function (){\r",
+							"    const responseJson = pm.response.json();\r",
+							"    console.log (\"Respuesta en formato Json: \", responseJson);\r",
+							"    pm.expect(responseJson.data[0].user_id).to.be.a(\"number\");\r",
+							"    \r",
+							"});\r",
+							"\r",
+							"pm.test(\"Validar la respuesta incluye un texto\", () =>{\r",
+							"    console.log(\"Respuesta formato Texto: \", pm.response.text)\r",
+							"    pm.expect(pm.response.text()).to.include('completed')\r",
+							"});\r",
+							"pm.test(\"Probar code status este dentro de unos codigos\", () =>{\r",
+							"    pm.expect(pm.response.code).to.be.oneOf([200,201,204]);\r",
+							"});\r",
+							"pm.test(\"Validar el tiempo de respeusta menor a 500ms\", () => {\r",
+							"    pm.expect(pm.response.responseTime).to.be.below(1500);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
 				"url": {
 					"raw": "https://{{base-url}}/public-api/users/{{user_id}}/todos",
 					"protocol": "https",
