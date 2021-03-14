@@ -1,0 +1,8 @@
+"Status","Start Time","Stop Time","Duration in ms","Parent Suite","Suite","Sub Suite","Test Class","Test Method","Name","Description"
+"passed","Sat Mar 06 13:38:45 CST 2021","Sat Mar 06 13:38:45 CST 2021","249","","apiCurso.apiECommerce","","apiCurso.apiECommerce","obtener_urls","obtener_urls",""
+"passed","Sat Mar 06 11:52:58 CST 2021","Sat Mar 06 11:53:03 CST 2021","4816","","apiCurso.apiECommerce","","apiCurso.apiECommerce","agregar_direccion","agregar_direccion",""
+"passed","Sat Mar 06 13:38:43 CST 2021","Sat Mar 06 13:38:44 CST 2021","1008","","apiCurso.apiECommerce","","apiCurso.apiECommerce","crear_usuario","crear_usuario",""
+"passed","Sat Mar 06 13:38:40 CST 2021","Sat Mar 06 13:38:43 CST 2021","3301","","apiCurso.apiECommerce","","apiCurso.apiECommerce","crear_anuncio","crear_anuncio",""
+"passed","Sat Mar 06 13:38:44 CST 2021","Sat Mar 06 13:38:44 CST 2021","292","","apiCurso.apiECommerce","","apiCurso.apiECommerce","nueva_direccion","nueva_direccion",""
+"passed","Sat Mar 06 13:38:35 CST 2021","Sat Mar 06 13:38:40 CST 2021","4909","","apiCurso.apiECommerce","","apiCurso.apiECommerce","aobtener_token_usuario_valido","aobtener_token_usuario_valido",""
+"passed","Sat Mar 06 13:38:44 CST 2021","Sat Mar 06 13:38:45 CST 2021","202","","apiCurso.apiECommerce","","apiCurso.apiECommerce","obtener_categorias","obtener_categorias",""

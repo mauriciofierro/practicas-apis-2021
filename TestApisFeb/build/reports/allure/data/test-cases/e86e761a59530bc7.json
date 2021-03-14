@@ -1,0 +1,146 @@
+{
+  "uid" : "e86e761a59530bc7",
+  "name" : "aobtener_token_usuario_valido",
+  "fullName" : "apiCurso.apiECommerce.aobtener_token_usuario_valido",
+  "historyId" : "a2b2966ee5139a1c5326fda566ca2c44",
+  "time" : {
+    "start" : 1615059515259,
+    "stop" : 1615059520168,
+    "duration" : 4909
+  },
+  "status" : "passed",
+  "flaky" : false,
+  "newFailed" : false,
+  "beforeStages" : [ ],
+  "afterStages" : [ ],
+  "labels" : [ {
+    "name" : "package",
+    "value" : "apiCurso"
+  }, {
+    "name" : "testClass",
+    "value" : "apiCurso.apiECommerce"
+  }, {
+    "name" : "testMethod",
+    "value" : "aobtener_token_usuario_valido"
+  }, {
+    "name" : "suite",
+    "value" : "apiCurso.apiECommerce"
+  }, {
+    "name" : "host",
+    "value" : "DESKTOP-RAICCHM"
+  }, {
+    "name" : "thread",
+    "value" : "6208@DESKTOP-RAICCHM.Test worker(15)"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure2"
+  } ],
+  "parameters" : [ ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "normal",
+    "retries" : [ {
+      "uid" : "31075ff508c25a0f",
+      "status" : "passed",
+      "time" : {
+        "start" : 1615054536942,
+        "stop" : 1615054541122,
+        "duration" : 4180
+      }
+    }, {
+      "uid" : "2ec657994118de9b",
+      "status" : "passed",
+      "time" : {
+        "start" : 1615054328566,
+        "stop" : 1615054333224,
+        "duration" : 4658
+      }
+    }, {
+      "uid" : "b42e5059ff0d9ba8",
+      "status" : "passed",
+      "time" : {
+        "start" : 1615054234064,
+        "stop" : 1615054238735,
+        "duration" : 4671
+      }
+    }, {
+      "uid" : "4e09daf3879a2155",
+      "status" : "passed",
+      "time" : {
+        "start" : 1615054043683,
+        "stop" : 1615054048004,
+        "duration" : 4321
+      }
+    }, {
+      "uid" : "d3a12badc7e1617c",
+      "status" : "passed",
+      "time" : {
+        "start" : 1615053945358,
+        "stop" : 1615053949208,
+        "duration" : 3850
+      }
+    }, {
+      "uid" : "ee4a64271f796fc5",
+      "status" : "passed",
+      "time" : {
+        "start" : 1615053921430,
+        "stop" : 1615053925743,
+        "duration" : 4313
+      }
+    }, {
+      "uid" : "ed01670b0d251451",
+      "status" : "passed",
+      "time" : {
+        "start" : 1615053552882,
+        "stop" : 1615053557116,
+        "duration" : 4234
+      }
+    }, {
+      "uid" : "75861e12ac25ce55",
+      "status" : "passed",
+      "time" : {
+        "start" : 1615053467892,
+        "stop" : 1615053472440,
+        "duration" : 4548
+      }
+    }, {
+      "uid" : "1d0f0351a5ff842f",
+      "status" : "passed",
+      "time" : {
+        "start" : 1615053412325,
+        "stop" : 1615053417533,
+        "duration" : 5208
+      }
+    }, {
+      "uid" : "43aa93edf8811d10",
+      "status" : "passed",
+      "time" : {
+        "start" : 1615053331083,
+        "stop" : 1615053335852,
+        "duration" : 4769
+      }
+    }, {
+      "uid" : "fbb640802bab2f0",
+      "status" : "passed",
+      "time" : {
+        "start" : 1615053259221,
+        "stop" : 1615053264093,
+        "duration" : 4872
+      }
+    }, {
+      "uid" : "ce437931bcae499d",
+      "status" : "passed",
+      "time" : {
+        "start" : 1615053183254,
+        "stop" : 1615053184525,
+        "duration" : 1271
+      }
+    } ],
+    "categories" : [ ],
+    "tags" : [ ]
+  },
+  "source" : "e86e761a59530bc7.json",
+  "parameterValues" : [ ]
+}

@@ -1,0 +1,48 @@
+{
+  "uid" : "abc155ace201ad14",
+  "name" : "crear_usuario",
+  "fullName" : "apiCurso.apiECommerce.crear_usuario",
+  "historyId" : "1ce2ecf49e349aa5dbca61e2fe6f9344",
+  "time" : {
+    "start" : 1615054336342,
+    "stop" : 1615054337176,
+    "duration" : 834
+  },
+  "status" : "passed",
+  "flaky" : false,
+  "newFailed" : false,
+  "beforeStages" : [ ],
+  "afterStages" : [ ],
+  "labels" : [ {
+    "name" : "package",
+    "value" : "apiCurso"
+  }, {
+    "name" : "testClass",
+    "value" : "apiCurso.apiECommerce"
+  }, {
+    "name" : "testMethod",
+    "value" : "crear_usuario"
+  }, {
+    "name" : "suite",
+    "value" : "apiCurso.apiECommerce"
+  }, {
+    "name" : "host",
+    "value" : "DESKTOP-RAICCHM"
+  }, {
+    "name" : "thread",
+    "value" : "15920@DESKTOP-RAICCHM.Test worker(15)"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure2"
+  } ],
+  "parameters" : [ ],
+  "links" : [ ],
+  "hidden" : true,
+  "retry" : true,
+  "extra" : {
+    "categories" : [ ],
+    "tags" : [ ]
+  },
+  "source" : "abc155ace201ad14.json",
+  "parameterValues" : [ ]
+}

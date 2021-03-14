@@ -1,0 +1,48 @@
+{
+  "uid" : "98988f6b8a42b3f6",
+  "name" : "obtener_categorias",
+  "fullName" : "apiCurso.apiECommerce.obtener_categorias",
+  "historyId" : "489c0c5ec7b5ae1a3c9da1a513946b66",
+  "time" : {
+    "start" : 1615053185959,
+    "stop" : 1615053186291,
+    "duration" : 332
+  },
+  "status" : "passed",
+  "flaky" : false,
+  "newFailed" : false,
+  "beforeStages" : [ ],
+  "afterStages" : [ ],
+  "labels" : [ {
+    "name" : "package",
+    "value" : "apiCurso"
+  }, {
+    "name" : "testClass",
+    "value" : "apiCurso.apiECommerce"
+  }, {
+    "name" : "testMethod",
+    "value" : "obtener_categorias"
+  }, {
+    "name" : "suite",
+    "value" : "apiCurso.apiECommerce"
+  }, {
+    "name" : "host",
+    "value" : "DESKTOP-RAICCHM"
+  }, {
+    "name" : "thread",
+    "value" : "18500@DESKTOP-RAICCHM.Test worker(15)"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure2"
+  } ],
+  "parameters" : [ ],
+  "links" : [ ],
+  "hidden" : true,
+  "retry" : true,
+  "extra" : {
+    "categories" : [ ],
+    "tags" : [ ]
+  },
+  "source" : "98988f6b8a42b3f6.json",
+  "parameterValues" : [ ]
+}

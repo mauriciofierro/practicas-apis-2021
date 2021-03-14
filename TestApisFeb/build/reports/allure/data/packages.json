@@ -1,0 +1,100 @@
+{
+  "uid" : "83edc06c07f9ae9e47eb6dd1b683e4e2",
+  "name" : "packages",
+  "children" : [ {
+    "name" : "apiCurso",
+    "children" : [ {
+      "name" : "agregar_direccion",
+      "uid" : "93d20a1fe1e99ec4",
+      "parentUid" : "fe9fd395aee21d062567eb589b21117c",
+      "status" : "passed",
+      "time" : {
+        "start" : 1615053178208,
+        "stop" : 1615053183024,
+        "duration" : 4816
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ ]
+    }, {
+      "name" : "aobtener_token_usuario_valido",
+      "uid" : "e86e761a59530bc7",
+      "parentUid" : "fe9fd395aee21d062567eb589b21117c",
+      "status" : "passed",
+      "time" : {
+        "start" : 1615059515259,
+        "stop" : 1615059520168,
+        "duration" : 4909
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ ]
+    }, {
+      "name" : "crear_anuncio",
+      "uid" : "b5f1488cb9a2da27",
+      "parentUid" : "fe9fd395aee21d062567eb589b21117c",
+      "status" : "passed",
+      "time" : {
+        "start" : 1615059520309,
+        "stop" : 1615059523610,
+        "duration" : 3301
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ ]
+    }, {
+      "name" : "crear_usuario",
+      "uid" : "a6588de6e545d37a",
+      "parentUid" : "fe9fd395aee21d062567eb589b21117c",
+      "status" : "passed",
+      "time" : {
+        "start" : 1615059523614,
+        "stop" : 1615059524622,
+        "duration" : 1008
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ ]
+    }, {
+      "name" : "nueva_direccion",
+      "uid" : "e004732f846cd79",
+      "parentUid" : "fe9fd395aee21d062567eb589b21117c",
+      "status" : "passed",
+      "time" : {
+        "start" : 1615059524622,
+        "stop" : 1615059524914,
+        "duration" : 292
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ ]
+    }, {
+      "name" : "obtener_categorias",
+      "uid" : "99e3428861286af4",
+      "parentUid" : "fe9fd395aee21d062567eb589b21117c",
+      "status" : "passed",
+      "time" : {
+        "start" : 1615059524916,
+        "stop" : 1615059525118,
+        "duration" : 202
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ ]
+    }, {
+      "name" : "obtener_urls",
+      "uid" : "18dca92c054911f0",
+      "parentUid" : "fe9fd395aee21d062567eb589b21117c",
+      "status" : "passed",
+      "time" : {
+        "start" : 1615059525121,
+        "stop" : 1615059525370,
+        "duration" : 249
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ ]
+    } ],
+    "uid" : "fe9fd395aee21d062567eb589b21117c"
+  } ]
+}

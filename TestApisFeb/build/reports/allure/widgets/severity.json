@@ -1,0 +1,71 @@
+[ {
+  "uid" : "e004732f846cd79",
+  "name" : "nueva_direccion",
+  "time" : {
+    "start" : 1615059524622,
+    "stop" : 1615059524914,
+    "duration" : 292
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "e86e761a59530bc7",
+  "name" : "aobtener_token_usuario_valido",
+  "time" : {
+    "start" : 1615059515259,
+    "stop" : 1615059520168,
+    "duration" : 4909
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "b5f1488cb9a2da27",
+  "name" : "crear_anuncio",
+  "time" : {
+    "start" : 1615059520309,
+    "stop" : 1615059523610,
+    "duration" : 3301
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "99e3428861286af4",
+  "name" : "obtener_categorias",
+  "time" : {
+    "start" : 1615059524916,
+    "stop" : 1615059525118,
+    "duration" : 202
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "a6588de6e545d37a",
+  "name" : "crear_usuario",
+  "time" : {
+    "start" : 1615059523614,
+    "stop" : 1615059524622,
+    "duration" : 1008
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "18dca92c054911f0",
+  "name" : "obtener_urls",
+  "time" : {
+    "start" : 1615059525121,
+    "stop" : 1615059525370,
+    "duration" : 249
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "93d20a1fe1e99ec4",
+  "name" : "agregar_direccion",
+  "time" : {
+    "start" : 1615053178208,
+    "stop" : 1615053183024,
+    "duration" : 4816
+  },
+  "status" : "passed",
+  "severity" : "normal"
+} ]

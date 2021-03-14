@@ -1,0 +1,48 @@
+{
+  "uid" : "ce437931bcae499d",
+  "name" : "aobtener_token_usuario_valido",
+  "fullName" : "apiCurso.apiECommerce.aobtener_token_usuario_valido",
+  "historyId" : "a2b2966ee5139a1c5326fda566ca2c44",
+  "time" : {
+    "start" : 1615053183254,
+    "stop" : 1615053184525,
+    "duration" : 1271
+  },
+  "status" : "passed",
+  "flaky" : false,
+  "newFailed" : false,
+  "beforeStages" : [ ],
+  "afterStages" : [ ],
+  "labels" : [ {
+    "name" : "package",
+    "value" : "apiCurso"
+  }, {
+    "name" : "testClass",
+    "value" : "apiCurso.apiECommerce"
+  }, {
+    "name" : "testMethod",
+    "value" : "aobtener_token_usuario_valido"
+  }, {
+    "name" : "suite",
+    "value" : "apiCurso.apiECommerce"
+  }, {
+    "name" : "host",
+    "value" : "DESKTOP-RAICCHM"
+  }, {
+    "name" : "thread",
+    "value" : "18500@DESKTOP-RAICCHM.Test worker(15)"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure2"
+  } ],
+  "parameters" : [ ],
+  "links" : [ ],
+  "hidden" : true,
+  "retry" : true,
+  "extra" : {
+    "categories" : [ ],
+    "tags" : [ ]
+  },
+  "source" : "ce437931bcae499d.json",
+  "parameterValues" : [ ]
+}

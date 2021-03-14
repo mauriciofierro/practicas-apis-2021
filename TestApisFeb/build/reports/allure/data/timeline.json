@@ -1,0 +1,997 @@
+{
+  "uid" : "ab17fc5a4eb3bca4b216b548c7f9fcbc",
+  "name" : "timeline",
+  "children" : [ {
+    "name" : "DESKTOP-RAICCHM",
+    "children" : [ {
+      "name" : "6208@DESKTOP-RAICCHM.Test worker(15)",
+      "children" : [ {
+        "name" : "nueva_direccion",
+        "uid" : "e004732f846cd79",
+        "parentUid" : "005a72a91a3fd339772e20c218f1becf",
+        "status" : "passed",
+        "time" : {
+          "start" : 1615059524622,
+          "stop" : 1615059524914,
+          "duration" : 292
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      }, {
+        "name" : "crear_anuncio",
+        "uid" : "b5f1488cb9a2da27",
+        "parentUid" : "005a72a91a3fd339772e20c218f1becf",
+        "status" : "passed",
+        "time" : {
+          "start" : 1615059520309,
+          "stop" : 1615059523610,
+          "duration" : 3301
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      }, {
+        "name" : "obtener_categorias",
+        "uid" : "99e3428861286af4",
+        "parentUid" : "005a72a91a3fd339772e20c218f1becf",
+        "status" : "passed",
+        "time" : {
+          "start" : 1615059524916,
+          "stop" : 1615059525118,
+          "duration" : 202
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      }, {
+        "name" : "obtener_urls",
+        "uid" : "18dca92c054911f0",
+        "parentUid" : "005a72a91a3fd339772e20c218f1becf",
+        "status" : "passed",
+        "time" : {
+          "start" : 1615059525121,
+          "stop" : 1615059525370,
+          "duration" : 249
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      }, {
+        "name" : "crear_usuario",
+        "uid" : "a6588de6e545d37a",
+        "parentUid" : "005a72a91a3fd339772e20c218f1becf",
+        "status" : "passed",
+        "time" : {
+          "start" : 1615059523614,
+          "stop" : 1615059524622,
+          "duration" : 1008
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      }, {
+        "name" : "aobtener_token_usuario_valido",
+        "uid" : "e86e761a59530bc7",
+        "parentUid" : "005a72a91a3fd339772e20c218f1becf",
+        "status" : "passed",
+        "time" : {
+          "start" : 1615059515259,
+          "stop" : 1615059520168,
+          "duration" : 4909
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      } ],
+      "uid" : "005a72a91a3fd339772e20c218f1becf"
+    }, {
+      "name" : "14304@DESKTOP-RAICCHM.Test worker(15)",
+      "children" : [ {
+        "name" : "obtener_categorias",
+        "uid" : "af4ab3681b527a86",
+        "parentUid" : "a1b65deb96e95292a5ac8d3126c157cf",
+        "status" : "passed",
+        "time" : {
+          "start" : 1615053419289,
+          "stop" : 1615053419607,
+          "duration" : 318
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      }, {
+        "name" : "obtener_urls",
+        "uid" : "aec943b89fe75aba",
+        "parentUid" : "a1b65deb96e95292a5ac8d3126c157cf",
+        "status" : "passed",
+        "time" : {
+          "start" : 1615053419611,
+          "stop" : 1615053419780,
+          "duration" : 169
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      }, {
+        "name" : "aobtener_token_usuario_valido",
+        "uid" : "1d0f0351a5ff842f",
+        "parentUid" : "a1b65deb96e95292a5ac8d3126c157cf",
+        "status" : "passed",
+        "time" : {
+          "start" : 1615053412325,
+          "stop" : 1615053417533,
+          "duration" : 5208
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      }, {
+        "name" : "nueva_direccion",
+        "uid" : "4504841ba113e07f",
+        "parentUid" : "a1b65deb96e95292a5ac8d3126c157cf",
+        "status" : "passed",
+        "time" : {
+          "start" : 1615053418949,
+          "stop" : 1615053419275,
+          "duration" : 326
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      }, {
+        "name" : "crear_usuario",
+        "uid" : "81c670a4ff791282",
+        "parentUid" : "a1b65deb96e95292a5ac8d3126c157cf",
+        "status" : "passed",
+        "time" : {
+          "start" : 1615053417692,
+          "stop" : 1615053418945,
+          "duration" : 1253
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      } ],
+      "uid" : "a1b65deb96e95292a5ac8d3126c157cf"
+    }, {
+      "name" : "7840@DESKTOP-RAICCHM.Test worker(15)",
+      "children" : [ {
+        "name" : "obtener_categorias",
+        "uid" : "bd7f9d7421e1ee51",
+        "parentUid" : "10882b3c2f765e0380a1e59cfcd1f01c",
+        "status" : "passed",
+        "time" : {
+          "start" : 1615053474005,
+          "stop" : 1615053474259,
+          "duration" : 254
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      }, {
+        "name" : "aobtener_token_usuario_valido",
+        "uid" : "75861e12ac25ce55",
+        "parentUid" : "10882b3c2f765e0380a1e59cfcd1f01c",
+        "status" : "passed",
+        "time" : {
+          "start" : 1615053467892,
+          "stop" : 1615053472440,
+          "duration" : 4548
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      }, {
+        "name" : "obtener_urls",
+        "uid" : "3d5f19b568c2ea46",
+        "parentUid" : "10882b3c2f765e0380a1e59cfcd1f01c",
+        "status" : "passed",
+        "time" : {
+          "start" : 1615053474262,
+          "stop" : 1615053474470,
+          "duration" : 208
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      }, {
+        "name" : "crear_usuario",
+        "uid" : "5e4043c6611e510a",
+        "parentUid" : "10882b3c2f765e0380a1e59cfcd1f01c",
+        "status" : "passed",
+        "time" : {
+          "start" : 1615053472589,
+          "stop" : 1615053473591,
+          "duration" : 1002
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      }, {
+        "name" : "nueva_direccion",
+        "uid" : "7501687db5c43793",
+        "parentUid" : "10882b3c2f765e0380a1e59cfcd1f01c",
+        "status" : "passed",
+        "time" : {
+          "start" : 1615053473806,
+          "stop" : 1615053473994,
+          "duration" : 188
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      } ],
+      "uid" : "10882b3c2f765e0380a1e59cfcd1f01c"
+    }, {
+      "name" : "24268@DESKTOP-RAICCHM.Test worker(15)",
+      "children" : [ {
+        "name" : "obtener_categorias",
+        "uid" : "61b7f9a752eb53c8",
+        "parentUid" : "56f08b1e3778fea62c4954bfa3daf5b9",
+        "status" : "passed",
+        "time" : {
+          "start" : 1615053951191,
+          "stop" : 1615053951382,
+          "duration" : 191
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      }, {
+        "name" : "crear_usuario",
+        "uid" : "48e76c79fbd3ed3e",
+        "parentUid" : "56f08b1e3778fea62c4954bfa3daf5b9",
+        "status" : "passed",
+        "time" : {
+          "start" : 1615053949595,
+          "stop" : 1615053950882,
+          "duration" : 1287
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      }, {
+        "name" : "aobtener_token_usuario_valido",
+        "uid" : "d3a12badc7e1617c",
+        "parentUid" : "56f08b1e3778fea62c4954bfa3daf5b9",
+        "status" : "passed",
+        "time" : {
+          "start" : 1615053945358,
+          "stop" : 1615053949208,
+          "duration" : 3850
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      }, {
+        "name" : "nueva_direccion",
+        "uid" : "ac41da1bfbebb364",
+        "parentUid" : "56f08b1e3778fea62c4954bfa3daf5b9",
+        "status" : "passed",
+        "time" : {
+          "start" : 1615053950896,
+          "stop" : 1615053951188,
+          "duration" : 292
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      }, {
+        "name" : "crear_anuncio",
+        "uid" : "29761cc7119a967c",
+        "parentUid" : "56f08b1e3778fea62c4954bfa3daf5b9",
+        "status" : "passed",
+        "time" : {
+          "start" : 1615053949313,
+          "stop" : 1615053949592,
+          "duration" : 279
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      }, {
+        "name" : "obtener_urls",
+        "uid" : "be2c2a01440737c5",
+        "parentUid" : "56f08b1e3778fea62c4954bfa3daf5b9",
+        "status" : "passed",
+        "time" : {
+          "start" : 1615053951635,
+          "stop" : 1615053951839,
+          "duration" : 204
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      } ],
+      "uid" : "56f08b1e3778fea62c4954bfa3daf5b9"
+    }, {
+      "name" : "18500@DESKTOP-RAICCHM.Test worker(15)",
+      "children" : [ {
+        "name" : "aobtener_token_usuario_valido",
+        "uid" : "ce437931bcae499d",
+        "parentUid" : "58f8bd7802b5e93cc382d9cbc4af4a41",
+        "status" : "passed",
+        "time" : {
+          "start" : 1615053183254,
+          "stop" : 1615053184525,
+          "duration" : 1271
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      }, {
+        "name" : "crear_usuario",
+        "uid" : "768a191a8ec04aef",
+        "parentUid" : "58f8bd7802b5e93cc382d9cbc4af4a41",
+        "status" : "passed",
+        "time" : {
+          "start" : 1615053184528,
+          "stop" : 1615053185944,
+          "duration" : 1416
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      }, {
+        "name" : "agregar_direccion",
+        "uid" : "93d20a1fe1e99ec4",
+        "parentUid" : "58f8bd7802b5e93cc382d9cbc4af4a41",
+        "status" : "passed",
+        "time" : {
+          "start" : 1615053178208,
+          "stop" : 1615053183024,
+          "duration" : 4816
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      }, {
+        "name" : "obtener_urls",
+        "uid" : "5d09cda49751cee5",
+        "parentUid" : "58f8bd7802b5e93cc382d9cbc4af4a41",
+        "status" : "passed",
+        "time" : {
+          "start" : 1615053186300,
+          "stop" : 1615053186555,
+          "duration" : 255
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      }, {
+        "name" : "obtener_categorias",
+        "uid" : "98988f6b8a42b3f6",
+        "parentUid" : "58f8bd7802b5e93cc382d9cbc4af4a41",
+        "status" : "passed",
+        "time" : {
+          "start" : 1615053185959,
+          "stop" : 1615053186291,
+          "duration" : 332
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      } ],
+      "uid" : "58f8bd7802b5e93cc382d9cbc4af4a41"
+    }, {
+      "name" : "17820@DESKTOP-RAICCHM.Test worker(15)",
+      "children" : [ {
+        "name" : "nueva_direccion",
+        "uid" : "fe1f2ebbacbb2ab",
+        "parentUid" : "edb07bb8ec7c9e16b4d1f64e81beb12f",
+        "status" : "passed",
+        "time" : {
+          "start" : 1615053558557,
+          "stop" : 1615053558852,
+          "duration" : 295
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      }, {
+        "name" : "crear_usuario",
+        "uid" : "d168649d728d29dd",
+        "parentUid" : "edb07bb8ec7c9e16b4d1f64e81beb12f",
+        "status" : "passed",
+        "time" : {
+          "start" : 1615053557243,
+          "stop" : 1615053558555,
+          "duration" : 1312
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      }, {
+        "name" : "aobtener_token_usuario_valido",
+        "uid" : "ed01670b0d251451",
+        "parentUid" : "edb07bb8ec7c9e16b4d1f64e81beb12f",
+        "status" : "passed",
+        "time" : {
+          "start" : 1615053552882,
+          "stop" : 1615053557116,
+          "duration" : 4234
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      }, {
+        "name" : "obtener_categorias",
+        "uid" : "30e02d7d19e372ef",
+        "parentUid" : "edb07bb8ec7c9e16b4d1f64e81beb12f",
+        "status" : "passed",
+        "time" : {
+          "start" : 1615053558861,
+          "stop" : 1615053559461,
+          "duration" : 600
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      }, {
+        "name" : "obtener_urls",
+        "uid" : "31419b6f63dea865",
+        "parentUid" : "edb07bb8ec7c9e16b4d1f64e81beb12f",
+        "status" : "passed",
+        "time" : {
+          "start" : 1615053559464,
+          "stop" : 1615053559669,
+          "duration" : 205
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      } ],
+      "uid" : "edb07bb8ec7c9e16b4d1f64e81beb12f"
+    }, {
+      "name" : "15920@DESKTOP-RAICCHM.Test worker(15)",
+      "children" : [ {
+        "name" : "obtener_urls",
+        "uid" : "1c153bd983257804",
+        "parentUid" : "806d881a6e0a7f82715184ec657a943a",
+        "status" : "passed",
+        "time" : {
+          "start" : 1615054337778,
+          "stop" : 1615054337944,
+          "duration" : 166
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      }, {
+        "name" : "nueva_direccion",
+        "uid" : "a7d23a30a40a04be",
+        "parentUid" : "806d881a6e0a7f82715184ec657a943a",
+        "status" : "passed",
+        "time" : {
+          "start" : 1615054337185,
+          "stop" : 1615054337548,
+          "duration" : 363
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      }, {
+        "name" : "crear_anuncio",
+        "uid" : "4c713f59bf1bf314",
+        "parentUid" : "806d881a6e0a7f82715184ec657a943a",
+        "status" : "passed",
+        "time" : {
+          "start" : 1615054333382,
+          "stop" : 1615054336337,
+          "duration" : 2955
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      }, {
+        "name" : "obtener_categorias",
+        "uid" : "f207e14f5446aed3",
+        "parentUid" : "806d881a6e0a7f82715184ec657a943a",
+        "status" : "passed",
+        "time" : {
+          "start" : 1615054337551,
+          "stop" : 1615054337774,
+          "duration" : 223
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      }, {
+        "name" : "crear_usuario",
+        "uid" : "abc155ace201ad14",
+        "parentUid" : "806d881a6e0a7f82715184ec657a943a",
+        "status" : "passed",
+        "time" : {
+          "start" : 1615054336342,
+          "stop" : 1615054337176,
+          "duration" : 834
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      }, {
+        "name" : "aobtener_token_usuario_valido",
+        "uid" : "2ec657994118de9b",
+        "parentUid" : "806d881a6e0a7f82715184ec657a943a",
+        "status" : "passed",
+        "time" : {
+          "start" : 1615054328566,
+          "stop" : 1615054333224,
+          "duration" : 4658
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      } ],
+      "uid" : "806d881a6e0a7f82715184ec657a943a"
+    }, {
+      "name" : "22444@DESKTOP-RAICCHM.Test worker(15)",
+      "children" : [ {
+        "name" : "nueva_direccion",
+        "uid" : "d01446659b4d2891",
+        "parentUid" : "38ddbb0034b7ec0cfa7ee94d98af5e19",
+        "status" : "passed",
+        "time" : {
+          "start" : 1615053265330,
+          "stop" : 1615053265571,
+          "duration" : 241
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      }, {
+        "name" : "obtener_categorias",
+        "uid" : "84bf35663da55711",
+        "parentUid" : "38ddbb0034b7ec0cfa7ee94d98af5e19",
+        "status" : "passed",
+        "time" : {
+          "start" : 1615053265585,
+          "stop" : 1615053265869,
+          "duration" : 284
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      }, {
+        "name" : "obtener_urls",
+        "uid" : "df2dce2f318fb266",
+        "parentUid" : "38ddbb0034b7ec0cfa7ee94d98af5e19",
+        "status" : "passed",
+        "time" : {
+          "start" : 1615053265873,
+          "stop" : 1615053266102,
+          "duration" : 229
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      }, {
+        "name" : "crear_usuario",
+        "uid" : "ca9a42b128f185b0",
+        "parentUid" : "38ddbb0034b7ec0cfa7ee94d98af5e19",
+        "status" : "passed",
+        "time" : {
+          "start" : 1615053264257,
+          "stop" : 1615053265326,
+          "duration" : 1069
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      }, {
+        "name" : "aobtener_token_usuario_valido",
+        "uid" : "fbb640802bab2f0",
+        "parentUid" : "38ddbb0034b7ec0cfa7ee94d98af5e19",
+        "status" : "passed",
+        "time" : {
+          "start" : 1615053259221,
+          "stop" : 1615053264093,
+          "duration" : 4872
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      } ],
+      "uid" : "38ddbb0034b7ec0cfa7ee94d98af5e19"
+    }, {
+      "name" : "24496@DESKTOP-RAICCHM.Test worker(15)",
+      "children" : [ {
+        "name" : "aobtener_token_usuario_valido",
+        "uid" : "43aa93edf8811d10",
+        "parentUid" : "21c72140b20f3df18ebc36107cae1bf4",
+        "status" : "passed",
+        "time" : {
+          "start" : 1615053331083,
+          "stop" : 1615053335852,
+          "duration" : 4769
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      }, {
+        "name" : "obtener_urls",
+        "uid" : "1f746a60114f3b60",
+        "parentUid" : "21c72140b20f3df18ebc36107cae1bf4",
+        "status" : "passed",
+        "time" : {
+          "start" : 1615053337573,
+          "stop" : 1615053337833,
+          "duration" : 260
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      }, {
+        "name" : "obtener_categorias",
+        "uid" : "605e8b645682dc73",
+        "parentUid" : "21c72140b20f3df18ebc36107cae1bf4",
+        "status" : "passed",
+        "time" : {
+          "start" : 1615053337282,
+          "stop" : 1615053337568,
+          "duration" : 286
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      }, {
+        "name" : "crear_usuario",
+        "uid" : "765a9339058b4f37",
+        "parentUid" : "21c72140b20f3df18ebc36107cae1bf4",
+        "status" : "passed",
+        "time" : {
+          "start" : 1615053336010,
+          "stop" : 1615053337024,
+          "duration" : 1014
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      }, {
+        "name" : "nueva_direccion",
+        "uid" : "d8ba9ed0fadfa565",
+        "parentUid" : "21c72140b20f3df18ebc36107cae1bf4",
+        "status" : "passed",
+        "time" : {
+          "start" : 1615053337028,
+          "stop" : 1615053337271,
+          "duration" : 243
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      } ],
+      "uid" : "21c72140b20f3df18ebc36107cae1bf4"
+    }, {
+      "name" : "16324@DESKTOP-RAICCHM.Test worker(15)",
+      "children" : [ {
+        "name" : "obtener_categorias",
+        "uid" : "28d8b050daadec11",
+        "parentUid" : "935a66febd07e7374f630aba4b5b1acc",
+        "status" : "passed",
+        "time" : {
+          "start" : 1615054050059,
+          "stop" : 1615054050273,
+          "duration" : 214
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      }, {
+        "name" : "crear_usuario",
+        "uid" : "e742c4de2c46980c",
+        "parentUid" : "935a66febd07e7374f630aba4b5b1acc",
+        "status" : "passed",
+        "time" : {
+          "start" : 1615054048442,
+          "stop" : 1615054049599,
+          "duration" : 1157
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      }, {
+        "name" : "nueva_direccion",
+        "uid" : "8cf8abc2bbe1af3b",
+        "parentUid" : "935a66febd07e7374f630aba4b5b1acc",
+        "status" : "passed",
+        "time" : {
+          "start" : 1615054049609,
+          "stop" : 1615054050055,
+          "duration" : 446
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      }, {
+        "name" : "obtener_urls",
+        "uid" : "ceedcb77af228f7b",
+        "parentUid" : "935a66febd07e7374f630aba4b5b1acc",
+        "status" : "passed",
+        "time" : {
+          "start" : 1615054050296,
+          "stop" : 1615054050518,
+          "duration" : 222
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      }, {
+        "name" : "crear_anuncio",
+        "uid" : "c3e62957228a47bc",
+        "parentUid" : "935a66febd07e7374f630aba4b5b1acc",
+        "status" : "passed",
+        "time" : {
+          "start" : 1615054048119,
+          "stop" : 1615054048438,
+          "duration" : 319
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      }, {
+        "name" : "aobtener_token_usuario_valido",
+        "uid" : "4e09daf3879a2155",
+        "parentUid" : "935a66febd07e7374f630aba4b5b1acc",
+        "status" : "passed",
+        "time" : {
+          "start" : 1615054043683,
+          "stop" : 1615054048004,
+          "duration" : 4321
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      } ],
+      "uid" : "935a66febd07e7374f630aba4b5b1acc"
+    }, {
+      "name" : "12944@DESKTOP-RAICCHM.Test worker(15)",
+      "children" : [ {
+        "name" : "nueva_direccion",
+        "uid" : "50a408ac5b1cf923",
+        "parentUid" : "7d51131af6045f6cea79335c0e1546c2",
+        "status" : "passed",
+        "time" : {
+          "start" : 1615054240142,
+          "stop" : 1615054240433,
+          "duration" : 291
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      }, {
+        "name" : "obtener_urls",
+        "uid" : "eb37dc569cd60319",
+        "parentUid" : "7d51131af6045f6cea79335c0e1546c2",
+        "status" : "passed",
+        "time" : {
+          "start" : 1615054240687,
+          "stop" : 1615054240866,
+          "duration" : 179
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      }, {
+        "name" : "crear_anuncio",
+        "uid" : "e3b481682e8655d1",
+        "parentUid" : "7d51131af6045f6cea79335c0e1546c2",
+        "status" : "passed",
+        "time" : {
+          "start" : 1615054238881,
+          "stop" : 1615054239244,
+          "duration" : 363
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      }, {
+        "name" : "aobtener_token_usuario_valido",
+        "uid" : "b42e5059ff0d9ba8",
+        "parentUid" : "7d51131af6045f6cea79335c0e1546c2",
+        "status" : "passed",
+        "time" : {
+          "start" : 1615054234064,
+          "stop" : 1615054238735,
+          "duration" : 4671
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      }, {
+        "name" : "crear_usuario",
+        "uid" : "3a2449c57fdd29c9",
+        "parentUid" : "7d51131af6045f6cea79335c0e1546c2",
+        "status" : "passed",
+        "time" : {
+          "start" : 1615054239249,
+          "stop" : 1615054240130,
+          "duration" : 881
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      }, {
+        "name" : "obtener_categorias",
+        "uid" : "bfee16a8ff226cce",
+        "parentUid" : "7d51131af6045f6cea79335c0e1546c2",
+        "status" : "passed",
+        "time" : {
+          "start" : 1615054240437,
+          "stop" : 1615054240684,
+          "duration" : 247
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      } ],
+      "uid" : "7d51131af6045f6cea79335c0e1546c2"
+    }, {
+      "name" : "9360@DESKTOP-RAICCHM.Test worker(15)",
+      "children" : [ {
+        "name" : "crear_usuario",
+        "uid" : "1d11f54fa5bf1013",
+        "parentUid" : "4e06ce4be941298b4841cbbf8b8851aa",
+        "status" : "passed",
+        "time" : {
+          "start" : 1615054544128,
+          "stop" : 1615054545213,
+          "duration" : 1085
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      }, {
+        "name" : "obtener_categorias",
+        "uid" : "fe84f9d9ccec4076",
+        "parentUid" : "4e06ce4be941298b4841cbbf8b8851aa",
+        "status" : "passed",
+        "time" : {
+          "start" : 1615054545547,
+          "stop" : 1615054546066,
+          "duration" : 519
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      }, {
+        "name" : "crear_anuncio",
+        "uid" : "343baf36641cda20",
+        "parentUid" : "4e06ce4be941298b4841cbbf8b8851aa",
+        "status" : "passed",
+        "time" : {
+          "start" : 1615054541255,
+          "stop" : 1615054544123,
+          "duration" : 2868
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      }, {
+        "name" : "aobtener_token_usuario_valido",
+        "uid" : "31075ff508c25a0f",
+        "parentUid" : "4e06ce4be941298b4841cbbf8b8851aa",
+        "status" : "passed",
+        "time" : {
+          "start" : 1615054536942,
+          "stop" : 1615054541122,
+          "duration" : 4180
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      }, {
+        "name" : "nueva_direccion",
+        "uid" : "4b48abac9133690f",
+        "parentUid" : "4e06ce4be941298b4841cbbf8b8851aa",
+        "status" : "passed",
+        "time" : {
+          "start" : 1615054545223,
+          "stop" : 1615054545545,
+          "duration" : 322
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      }, {
+        "name" : "obtener_urls",
+        "uid" : "ec0084bc358b1eb8",
+        "parentUid" : "4e06ce4be941298b4841cbbf8b8851aa",
+        "status" : "passed",
+        "time" : {
+          "start" : 1615054546069,
+          "stop" : 1615054546225,
+          "duration" : 156
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      } ],
+      "uid" : "4e06ce4be941298b4841cbbf8b8851aa"
+    }, {
+      "name" : "15660@DESKTOP-RAICCHM.Test worker(15)",
+      "children" : [ {
+        "name" : "aobtener_token_usuario_valido",
+        "uid" : "ee4a64271f796fc5",
+        "parentUid" : "90e9c050ec48d311237d3c671ea2f405",
+        "status" : "passed",
+        "time" : {
+          "start" : 1615053921430,
+          "stop" : 1615053925743,
+          "duration" : 4313
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      }, {
+        "name" : "crear_usuario",
+        "uid" : "826116e1ef7ef6c3",
+        "parentUid" : "90e9c050ec48d311237d3c671ea2f405",
+        "status" : "passed",
+        "time" : {
+          "start" : 1615053925871,
+          "stop" : 1615053926981,
+          "duration" : 1110
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      }, {
+        "name" : "crear_anuncio",
+        "uid" : "63a6198d6642756b",
+        "parentUid" : "90e9c050ec48d311237d3c671ea2f405",
+        "status" : "broken",
+        "time" : {
+          "start" : 1615053925861,
+          "stop" : 1615053925867,
+          "duration" : 6
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      }, {
+        "name" : "nueva_direccion",
+        "uid" : "d284895af8cb1d0b",
+        "parentUid" : "90e9c050ec48d311237d3c671ea2f405",
+        "status" : "passed",
+        "time" : {
+          "start" : 1615053926992,
+          "stop" : 1615053927291,
+          "duration" : 299
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      }, {
+        "name" : "obtener_urls",
+        "uid" : "d1517eb7c2a8a283",
+        "parentUid" : "90e9c050ec48d311237d3c671ea2f405",
+        "status" : "passed",
+        "time" : {
+          "start" : 1615053927557,
+          "stop" : 1615053927790,
+          "duration" : 233
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      }, {
+        "name" : "obtener_categorias",
+        "uid" : "cdee1e652a731418",
+        "parentUid" : "90e9c050ec48d311237d3c671ea2f405",
+        "status" : "passed",
+        "time" : {
+          "start" : 1615053927294,
+          "stop" : 1615053927555,
+          "duration" : 261
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      } ],
+      "uid" : "90e9c050ec48d311237d3c671ea2f405"
+    } ],
+    "uid" : "b1afeabed2af6a4f7e9e31f0b4d57c31"
+  } ]
+}
