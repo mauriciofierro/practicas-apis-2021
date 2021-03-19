@@ -1,147 +1,137 @@
-{
-     "name": "Zelda Fitzgerald",
-    "gender": "Female",
--    "email": "zelda.fitzgerald@emerson.com",
-    "status": "Active"
-}
 Request method:	POST
-4Request URI:	https://gorest.co.in/public-api/users
+.Request URI:	https://reqres.in/api/register/
 Proxy:			<none>
 Request params:	<none>
 Query params:	<none>
 Form params:	<none>
 Path params:	<none>
-aHeaders:		Authorization=Bearer 7efc10342c9f7a0fef2e344fe048eb2a87317092e67cbd598ba0988a2e6c8a33
-				Accept=*/*
-2				Content-Type=application/json; charset=UTF-8
+Headers:		Accept=*/*
+2				Content-Type=application/json; charset=utf-8
 Cookies:		<none>
 Multiparts:		<none>
-Body:
-{
-     "name": "Zelda Fitzgerald",
-    "gender": "Female",
--    "email": "zelda.fitzgerald@emerson.com",
-    "status": "Active"
-}
-˚Body Response: {"code":201,"meta":null,"data":{"id":1330,"name":"Zelda Fitzgerald","email":"zelda.fitzgerald@emerson.com","gender":"Female","status":"Active","created_at":"2021-03-17T08:27:01.248+05:30","updated_at":"2021-03-17T08:27:01.248+05:30"}}
-Request method:	GET
-4Request URI:	https://gorest.co.in/public-api/users
+Body:			<none>
+Body Response: 
+'{"error":"Missing email or username"}
+Request method:	POST
++Request URI:	https://reqres.in/api/login/
 Proxy:			<none>
 Request params:	<none>
 Query params:	<none>
 Form params:	<none>
 Path params:	<none>
 Headers:		Accept=*/*
+2				Content-Type=application/json; charset=UTF-8
 Cookies:		<none>
 Multiparts:		<none>
-Body:			<none>
-õ Body Response: {"code":200,"meta":{"pagination":{"total":1284,"pages":65,"page":1,"limit":20}},"data":[{"id":21,"name":"Papotico","email":"dr@wintheiser.org","gender":"Male","status":"Active","created_at":"2021-03-17T03:50:04.602+05:30","updated_at":"2021-03-17T07:07:05.512+05:30"},{"id":23,"name":"Alexander","email":"alex@schamberger.net","gender":"Female","status":"Inactive","created_at":"2021-03-17T03:50:04.650+05:30","updated_at":"2021-03-17T07:07:35.731+05:30"},{"id":24,"name":"G√©nova","email":"genova@hotmail.com","gender":"Male","status":"Active","created_at":"2021-03-17T03:50:04.657+05:30","updated_at":"2021-03-17T07:17:11.447+05:30"},{"id":25,"name":"Aayushman Kapoor","email":"aayushman_kapoor@legros.biz","gender":"Male","status":"Active","created_at":"2021-03-17T03:50:04.679+05:30","updated_at":"2021-03-17T03:50:04.679+05:30"},{"id":26,"name":"Bakula Dwivedi","email":"dwivedi_bakula@gibson-bogan.org","gender":"Female","status":"Active","created_at":"2021-03-17T03:50:04.698+05:30","updated_at":"2021-03-17T03:50:04.698+05:30"},{"id":27,"name":"Durgeshwari Dubashi","email":"dubashi_durgeshwari@mitchell.co","gender":"Male","status":"Active","created_at":"2021-03-17T03:50:04.720+05:30","updated_at":"2021-03-17T03:50:04.720+05:30"},{"id":28,"name":"Chandrabhaga Khatri","email":"khatri_chandrabhaga@batz-fahey.co","gender":"Male","status":"Active","created_at":"2021-03-17T03:50:04.754+05:30","updated_at":"2021-03-17T03:50:04.754+05:30"},{"id":29,"name":"Drona Khatri","email":"drona_khatri@kiehn.net","gender":"Male","status":"Inactive","created_at":"2021-03-17T03:50:04.777+05:30","updated_at":"2021-03-17T03:50:04.777+05:30"},{"id":30,"name":"Ananda Agarwal","email":"ananda_agarwal@purdy.name","gender":"Female","status":"Active","created_at":"2021-03-17T03:50:04.810+05:30","updated_at":"2021-03-17T03:50:04.810+05:30"},{"id":31,"name":"Sitara Naik DVM","email":"dvm_naik_sitara@rogahn-abshire.info","gender":"Male","status":"Inactive","created_at":"2021-03-17T03:50:04.839+05:30","updated_at":"2021-03-17T03:50:04.839+05:30"},{"id":32,"name":"Kanishka Singh","email":"singh_kanishka@schinner.co","gender":"Female","status":"Inactive","created_at":"2021-03-17T03:50:04.843+05:30","updated_at":"2021-03-17T03:50:04.843+05:30"},{"id":33,"name":"Amritambu Jain DC","email":"jain_amritambu_dc@altenwerth.name","gender":"Male","status":"Active","created_at":"2021-03-17T03:50:04.866+05:30","updated_at":"2021-03-17T03:50:04.866+05:30"},{"id":34,"name":"Rep. Gautami Dhawan","email":"rep_gautami_dhawan@pollich-lubowitz.io","gender":"Male","status":"Active","created_at":"2021-03-17T03:50:04.879+05:30","updated_at":"2021-03-17T03:50:04.879+05:30"},{"id":35,"name":"Bhanumati Joshi","email":"joshi_bhanumati@altenwerth-kerluke.io","gender":"Female","status":"Active","created_at":"2021-03-17T03:50:04.890+05:30","updated_at":"2021-03-17T03:50:04.890+05:30"},{"id":36,"name":"Rev. Sarala Reddy","email":"rev_sarala_reddy@roberts-bins.info","gender":"Male","status":"Inactive","created_at":"2021-03-17T03:50:04.929+05:30","updated_at":"2021-03-17T03:50:04.929+05:30"},{"id":37,"name":"Som Iyer","email":"iyer_som@romaguera.io","gender":"Male","status":"Active","created_at":"2021-03-17T03:50:04.947+05:30","updated_at":"2021-03-17T03:50:04.947+05:30"},{"id":38,"name":"Adityanandana Kakkar V","email":"kakkar_adityanandana_v@lockman.org","gender":"Male","status":"Active","created_at":"2021-03-17T03:50:04.956+05:30","updated_at":"2021-03-17T03:50:04.956+05:30"},{"id":39,"name":"Krishnadas Marar LLD","email":"marar_lld_krishnadas@rohan-predovic.info","gender":"Female","status":"Active","created_at":"2021-03-17T03:50:04.963+05:30","updated_at":"2021-03-17T03:50:04.963+05:30"},{"id":40,"name":"Gayatri Agarwal Sr.","email":"gayatri_sr_agarwal@lindgren.io","gender":"Female","status":"Inactive","created_at":"2021-03-17T03:50:04.968+05:30","updated_at":"2021-03-17T03:50:04.968+05:30"},{"id":41,"name":"Mohini Chattopadhyay","email":"mohini_chattopadhyay@dicki-wolf.org","gender":"Male","status":"Active","created_at":"2021-03-17T03:50:04.979+05:30","updated_at":"2021-03-17T03:50:04.979+05:30"}]}
-Request method:	GET
-9Request URI:	https://gorest.co.in/public-api/users/1330
+Body:
+{
+%    "email": "eevee.holt@reqres.in",
+    "password": "cityslick"
+}
+Body Response: 
+{"error":"user not found"}
+Request method:	POST
+.Request URI:	https://reqres.in/api/register/
 Proxy:			<none>
 Request params:	<none>
 Query params:	<none>
 Form params:	<none>
 Path params:	<none>
 Headers:		Accept=*/*
+1				Content-Type=text/plain; charset=ISO-8859-1
 Cookies:		<none>
 Multiparts:		<none>
-Body:			<none>
-˚Body Response: {"code":200,"meta":null,"data":{"id":1330,"name":"Zelda Fitzgerald","email":"zelda.fitzgerald@emerson.com","gender":"Female","status":"Active","created_at":"2021-03-17T08:27:01.248+05:30","updated_at":"2021-03-17T08:27:01.248+05:30"}}
+Body:
+{
+'    "email": "janet.weaver@reqres.in",
+    "password": "hehelol"
+}
+Body Response: 
+'{"error":"Missing email or username"}
 Request method:	PATCH
-9Request URI:	https://gorest.co.in/public-api/users/1330
+,Request URI:	https://reqres.in/api/users/6
 Proxy:			<none>
 Request params:	<none>
 Query params:	<none>
 Form params:	<none>
 Path params:	<none>
-aHeaders:		Authorization=Bearer 7efc10342c9f7a0fef2e344fe048eb2a87317092e67cbd598ba0988a2e6c8a33
-				Accept=*/*
-2				Content-Type=application/json; charset=UTF-8
+Headers:		Accept=*/*
+1				Content-Type=text/plain; charset=ISO-8859-1
 Cookies:		<none>
 Multiparts:		<none>
 Body:
 {
-    "name": "Zelda Williams"
+    "name": "Maurice",
+    "job": "QA Lead"
 }
-˘Body Response: {"code":200,"meta":null,"data":{"id":1330,"name":"Zelda Williams","email":"zelda.fitzgerald@emerson.com","gender":"Female","status":"Active","created_at":"2021-03-17T08:27:01.248+05:30","updated_at":"2021-03-17T08:27:06.126+05:30"}}
-Request method:	POST
-?Request URI:	https://gorest.co.in/public-api/users/1330/posts
+Body Response: 
+*{"updatedAt":"2021-03-19T03:00:52.267Z"}
+Request method:	DELETE
+,Request URI:	https://reqres.in/api/users/5
 Proxy:			<none>
 Request params:	<none>
 Query params:	<none>
 Form params:	<none>
 Path params:	<none>
-aHeaders:		Authorization=Bearer 7efc10342c9f7a0fef2e344fe048eb2a87317092e67cbd598ba0988a2e6c8a33
-				Accept=*/*
-2				Content-Type=application/json; charset=UTF-8
+Headers:		Accept=*/*
 Cookies:		<none>
 Multiparts:		<none>
-Body:
-{
-.    "title": "Whose name is the Princess's?",
-E    "body": "It's because of F. Scott Fitzgerlad's wife, of course!"
-}
-çBody Response: {"code":201,"meta":null,"data":{"id":1268,"user_id":1330,"title":"Whose name is the Princess's?","body":"It's because of F. Scott Fitzgerlad's wife, of course!","created_at":"2021-03-17T08:27:07.596+05:30","updated_at":"2021-03-17T08:27:07.596+05:30"}}
+Body:			<none>
+Body Response: 
+
 Request method:	POST
-BRequest URI:	https://gorest.co.in/public-api/posts/1268/comments
++Request URI:	https://reqres.in/api/login/
 Proxy:			<none>
 Request params:	<none>
 Query params:	<none>
 Form params:	<none>
 Path params:	<none>
-aHeaders:		Authorization=Bearer 7efc10342c9f7a0fef2e344fe048eb2a87317092e67cbd598ba0988a2e6c8a33
-				Accept=*/*
+Headers:		Accept=*/*
 2				Content-Type=application/json; charset=UTF-8
 Cookies:		<none>
 Multiparts:		<none>
 Body:
 {
-    "name": "Chuchita Perez",
-(    "email": "the.chuchs@no-reply.com",
-B    "body": "I did not know that! Thank you for enlightening us!"
+#    "email": "eve.holt@reqres.in",
+    "password": ""
 }
-úBody Response: {"code":201,"meta":null,"data":{"id":1259,"post_id":1268,"name":"Chuchita Perez","email":"the.chuchs@no-reply.com","body":"I did not know that! Thank you for enlightening us!","created_at":"2021-03-17T08:27:09.135+05:30","updated_at":"2021-03-17T08:27:09.135+05:30"}}
-{
-7    "title": "Brush your teeth before you go to bed!",
-    "completed": true
-}
-Request method:	POST
-?Request URI:	https://gorest.co.in/public-api/users/1330/todos
+Body Response: 
+{"error":"Missing password"}
+Request method:	GET
+,Request URI:	https://reqres.in/api/users/5
 Proxy:			<none>
 Request params:	<none>
 Query params:	<none>
 Form params:	<none>
 Path params:	<none>
-aHeaders:		Authorization=Bearer 7efc10342c9f7a0fef2e344fe048eb2a87317092e67cbd598ba0988a2e6c8a33
-				Accept=*/*
-2				Content-Type=application/json; charset=UTF-8
+Headers:		Accept=*/*
 Cookies:		<none>
 Multiparts:		<none>
-Body:
-{
-7    "title": "Brush your teeth before you go to bed!",
-    "completed": true
-}
-ÁBody Response: {"code":201,"meta":null,"data":{"id":1841,"user_id":1330,"title":"Brush your teeth before you go to bed!","completed":true,"created_at":"2021-03-17T08:27:10.614+05:30","updated_at":"2021-03-17T08:27:10.614+05:30"}}
-	Request method:	GET
-	BRequest URI:	https://gorest.co.in/public-api/posts/1259/comments
+Body:			<none>
+Body Response: 
+û{"data":{"id":5,"email":"charles.morris@reqres.in","first_name":"Charles","last_name":"Morris","avatar":"https://reqres.in/img/faces/5-image.jpg"},"support":{"url":"https://reqres.in/#support-heading","text":"To keep ReqRes free, contributions towards server costs are appreciated!"}}
+	Request method:	PUT
+	,Request URI:	https://reqres.in/api/users/2
 	Proxy:			<none>
 	Request params:	<none>
 	Query params:	<none>
 	Form params:	<none>
 	Path params:	<none>
-	aHeaders:		Authorization=Bearer 7efc10342c9f7a0fef2e344fe048eb2a87317092e67cbd598ba0988a2e6c8a33
-					Accept=*/*
-	2				Content-Type=application/json; charset=UTF-8
+	Headers:		Accept=*/*
+	1				Content-Type=text/plain; charset=ISO-8859-1
 	Cookies:		<none>
 	Multiparts:		<none>
-	Body:			<none>
-	gBody Response: {"code":200,"meta":{"pagination":{"total":0,"pages":0,"page":1,"limit":20}},"data":[]}
+	Body:
+	{
+	    "name": "Maurice",
+	    "job": "QA Lead"
+	}
+	Body Response: 
+	*{"updatedAt":"2021-03-19T03:00:54.125Z"}
 
-Request method:	GET
+Request method:	POST
 
-?Request URI:	https://gorest.co.in/public-api/users/1330/posts
++Request URI:	https://reqres.in/api/users/
 
 Proxy:			<none>
 
@@ -153,30 +143,138 @@
 
 Path params:	<none>
 
-aHeaders:		Authorization=Bearer 7efc10342c9f7a0fef2e344fe048eb2a87317092e67cbd598ba0988a2e6c8a33
+Headers:		Accept=*/*
 
-				Accept=*/*
-
-2				Content-Type=application/json; charset=UTF-8
+1				Content-Type=text/plain; charset=ISO-8859-1
 
 Cookies:		<none>
 
 Multiparts:		<none>
 
-Body:			<none>
+Body:
 
-√Body Response: {"code":200,"meta":{"pagination":{"total":1,"pages":1,"page":1,"limit":20}},"data":[{"id":1268,"user_id":1330,"title":"Whose name is the Princess's?","body":"It's because of F. Scott Fitzgerlad's wife, of course!","created_at":"2021-03-17T08:27:07.596+05:30","updated_at":"2021-03-17T08:27:07.596+05:30"}]}
+{
+
+    "name": "maurice",
+
+    "job": "leader"
+
+}
+
+Body Response: 
+
+5{"id":"398","createdAt":"2021-03-19T03:00:54.662Z"}
 Request method:	GET
-?Request URI:	https://gorest.co.in/public-api/users/1330/todos
++Request URI:	https://reqres.in/api/unkown
 Proxy:			<none>
 Request params:	<none>
 Query params:	<none>
 Form params:	<none>
 Path params:	<none>
-aHeaders:		Authorization=Bearer 7efc10342c9f7a0fef2e344fe048eb2a87317092e67cbd598ba0988a2e6c8a33
-				Accept=*/*
-2				Content-Type=application/json; charset=UTF-8
+Headers:		Accept=*/*
 Cookies:		<none>
 Multiparts:		<none>
 Body:			<none>
-ùBody Response: {"code":200,"meta":{"pagination":{"total":1,"pages":1,"page":1,"limit":20}},"data":[{"id":1841,"user_id":1330,"title":"Brush your teeth before you go to bed!","completed":true,"created_at":"2021-03-17T08:27:10.614+05:30","updated_at":"2021-03-17T08:27:10.614+05:30"}]}
+Body Response: 
+√{"page":1,"per_page":6,"total":12,"total_pages":2,"data":[{"id":1,"name":"cerulean","year":2000,"color":"#98B2D1","pantone_value":"15-4020"},{"id":2,"name":"fuchsia rose","year":2001,"color":"#C74375","pantone_value":"17-2031"},{"id":3,"name":"true red","year":2002,"color":"#BF1932","pantone_value":"19-1664"},{"id":4,"name":"aqua sky","year":2003,"color":"#7BC4C4","pantone_value":"14-4811"},{"id":5,"name":"tigerlily","year":2004,"color":"#E2583E","pantone_value":"17-1456"},{"id":6,"name":"blue turquoise","year":2005,"color":"#53B0AE","pantone_value":"15-5217"}],"support":{"url":"https://reqres.in/#support-heading","text":"To keep ReqRes free, contributions towards server costs are appreciated!"}}
+Request method:	POST
+.Request URI:	https://reqres.in/api/register/
+Proxy:			<none>
+Request params:	<none>
+Query params:	<none>
+Form params:	<none>
+Path params:	<none>
+Headers:		Accept=*/*
+1				Content-Type=text/plain; charset=ISO-8859-1
+Cookies:		<none>
+Multiparts:		<none>
+Body:
+{
+%    "email": "eevee.holt@reqres.in",
+    "password": "pistol"
+}
+Body Response: 
+'{"error":"Missing email or username"}
+Request method:	GET
+2Request URI:	https://reqres.in/api/users?delay=5
+Proxy:			<none>
+Request params:	<none>
+Query params:	delay=5
+Form params:	<none>
+Path params:	<none>
+Headers:		Accept=*/*
+Cookies:		<none>
+Multiparts:		<none>
+Body:			<none>
+Body Response: 
+Ê{"page":1,"per_page":6,"total":12,"total_pages":2,"data":[{"id":1,"email":"george.bluth@reqres.in","first_name":"George","last_name":"Bluth","avatar":"https://reqres.in/img/faces/1-image.jpg"},{"id":2,"email":"janet.weaver@reqres.in","first_name":"Janet","last_name":"Weaver","avatar":"https://reqres.in/img/faces/2-image.jpg"},{"id":3,"email":"emma.wong@reqres.in","first_name":"Emma","last_name":"Wong","avatar":"https://reqres.in/img/faces/3-image.jpg"},{"id":4,"email":"eve.holt@reqres.in","first_name":"Eve","last_name":"Holt","avatar":"https://reqres.in/img/faces/4-image.jpg"},{"id":5,"email":"charles.morris@reqres.in","first_name":"Charles","last_name":"Morris","avatar":"https://reqres.in/img/faces/5-image.jpg"},{"id":6,"email":"tracey.ramos@reqres.in","first_name":"Tracey","last_name":"Ramos","avatar":"https://reqres.in/img/faces/6-image.jpg"}],"support":{"url":"https://reqres.in/#support-heading","text":"To keep ReqRes free, contributions towards server costs are appreciated!"}}
+Request method:	GET
+1Request URI:	https://reqres.in/api/users?page=2
+Proxy:			<none>
+Request params:	<none>
+Query params:	page=2
+Form params:	<none>
+Path params:	<none>
+Headers:		Accept=*/*
+Cookies:		<none>
+Multiparts:		<none>
+Body:			<none>
+Body Response: 
+à{"page":2,"per_page":6,"total":12,"total_pages":2,"data":[{"id":7,"email":"michael.lawson@reqres.in","first_name":"Michael","last_name":"Lawson","avatar":"https://reqres.in/img/faces/7-image.jpg"},{"id":8,"email":"lindsay.ferguson@reqres.in","first_name":"Lindsay","last_name":"Ferguson","avatar":"https://reqres.in/img/faces/8-image.jpg"},{"id":9,"email":"tobias.funke@reqres.in","first_name":"Tobias","last_name":"Funke","avatar":"https://reqres.in/img/faces/9-image.jpg"},{"id":10,"email":"byron.fields@reqres.in","first_name":"Byron","last_name":"Fields","avatar":"https://reqres.in/img/faces/10-image.jpg"},{"id":11,"email":"george.edwards@reqres.in","first_name":"George","last_name":"Edwards","avatar":"https://reqres.in/img/faces/11-image.jpg"},{"id":12,"email":"rachel.howell@reqres.in","first_name":"Rachel","last_name":"Howell","avatar":"https://reqres.in/img/faces/12-image.jpg"}],"support":{"url":"https://reqres.in/#support-heading","text":"To keep ReqRes free, contributions towards server costs are appreciated!"}}
+Request method:	GET
+-Request URI:	https://reqres.in/api/users/44
+Proxy:			<none>
+Request params:	<none>
+Query params:	<none>
+Form params:	<none>
+Path params:	<none>
+Headers:		Accept=*/*
+Cookies:		<none>
+Multiparts:		<none>
+Body:			<none>
+Body Response: 
+{}
+Request method:	GET
++Request URI:	https://reqres.in/api/users/
+Proxy:			<none>
+Request params:	<none>
+Query params:	<none>
+Form params:	<none>
+Path params:	<none>
+Headers:		Accept=*/*
+Cookies:		<none>
+Multiparts:		<none>
+Body:			<none>
+Body Response: 
+Ê{"page":1,"per_page":6,"total":12,"total_pages":2,"data":[{"id":1,"email":"george.bluth@reqres.in","first_name":"George","last_name":"Bluth","avatar":"https://reqres.in/img/faces/1-image.jpg"},{"id":2,"email":"janet.weaver@reqres.in","first_name":"Janet","last_name":"Weaver","avatar":"https://reqres.in/img/faces/2-image.jpg"},{"id":3,"email":"emma.wong@reqres.in","first_name":"Emma","last_name":"Wong","avatar":"https://reqres.in/img/faces/3-image.jpg"},{"id":4,"email":"eve.holt@reqres.in","first_name":"Eve","last_name":"Holt","avatar":"https://reqres.in/img/faces/4-image.jpg"},{"id":5,"email":"charles.morris@reqres.in","first_name":"Charles","last_name":"Morris","avatar":"https://reqres.in/img/faces/5-image.jpg"},{"id":6,"email":"tracey.ramos@reqres.in","first_name":"Tracey","last_name":"Ramos","avatar":"https://reqres.in/img/faces/6-image.jpg"}],"support":{"url":"https://reqres.in/#support-heading","text":"To keep ReqRes free, contributions towards server costs are appreciated!"}}
+Request method:	POST
++Request URI:	https://reqres.in/api/login/
+Proxy:			<none>
+Request params:	<none>
+Query params:	<none>
+Form params:	<none>
+Path params:	<none>
+Headers:		Accept=*/*
+2				Content-Type=application/json; charset=UTF-8
+Cookies:		<none>
+Multiparts:		<none>
+Body:
+{
+#    "email": "eve.holt@reqres.in",
+    "password": "cityslick"
+}
+Body Response: 
+{"token":"QpwL5tke4Pnpja7X4"}
+Request method:	GET
+.Request URI:	https://reqres.in/api/unkown/44
+Proxy:			<none>
+Request params:	<none>
+Query params:	<none>
+Form params:	<none>
+Path params:	<none>
+Headers:		Accept=*/*
+Cookies:		<none>
+Multiparts:		<none>
+Body:			<none>
+Body Response: 
+{}

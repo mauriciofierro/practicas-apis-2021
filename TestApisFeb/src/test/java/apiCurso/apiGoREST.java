@@ -9,6 +9,7 @@ import org.junit.Test;
 import org.junit.runners.MethodSorters;
 
 import static io.restassured.RestAssured.given;
+import static org.junit.Assert.*;
 
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
 
@@ -39,6 +40,12 @@ public class apiGoREST {
         String bodyResponse = response.getBody().asString();
         System.out.println("Body Response: " + bodyResponse);
 
+        assertEquals(200, response.getStatusCode());
+        assertNotNull(JsonPath.read(bodyResponse, "$.data[0].email"));
+        assertNotNull(bodyResponse);
+        assertTrue(bodyResponse.contains("data"));
+        assertTrue(response.getTime() < 925);
+
     }
 
     @Test
@@ -52,7 +59,7 @@ public class apiGoREST {
                 "    \"status\": \"Active\"\n" +
                 "}";
 
-        System.out.println(bodyRequest);
+        //System.out.println(bodyRequest);
 
         Response response = given()
                 .log().all()
@@ -66,6 +73,11 @@ public class apiGoREST {
 
         user_id = JsonPath.read(bodyResponse, "$.data.id");
 
+        assertEquals(200, response.getStatusCode());
+        assertNotNull(JsonPath.read(bodyResponse, "$.data.email"));
+        assertNotNull(bodyResponse);
+        assertTrue(bodyResponse.contains("created_at"));
+
     }
 
     @Test
@@ -78,6 +90,12 @@ public class apiGoREST {
 
         String bodyResponse = response.getBody().asString();
         System.out.println("Body Response: " + bodyResponse);
+
+        assertEquals(200, response.getStatusCode());
+        assertNotNull(JsonPath.read(bodyResponse, "$.data.email"));
+        assertEquals("Active", JsonPath.read(bodyResponse, "$.data.status"));
+        assertNotNull(bodyResponse);
+        assertTrue(bodyResponse.contains("created_at"));
 
     }
 
@@ -98,6 +116,12 @@ public class apiGoREST {
 
         String bodyResponse = response.getBody().asString();
         System.out.println("Body Response: " + bodyResponse);
+
+        assertEquals(200, response.getStatusCode());
+        assertNotNull(JsonPath.read(bodyResponse, "$.data.email"));
+        assertEquals("Active", JsonPath.read(bodyResponse, "$.data.status"));
+        assertNotNull(bodyResponse);
+        assertTrue(bodyResponse.contains("created_at"));
 
     }
 
@@ -122,6 +146,11 @@ public class apiGoREST {
 
         post_id = JsonPath.read(bodyResponse, "$.data.id");
 
+        assertEquals(200, response.getStatusCode());
+        assertNotNull(JsonPath.read(bodyResponse, "$.data.body"));
+        assertNotNull(bodyResponse);
+        assertTrue(bodyResponse.contains("created_at"));
+
     }
 
     @Test
@@ -136,6 +165,11 @@ public class apiGoREST {
 
         String bodyResponse = response.getBody().asString();
         System.out.println("Body Response: " + bodyResponse);
+
+        assertEquals(200, response.getStatusCode());
+        assertNotNull(JsonPath.read(bodyResponse, "$.data[0].body"));
+        assertNotNull(bodyResponse);
+        assertTrue(bodyResponse.contains("created_at"));
 
     }
 
@@ -160,12 +194,15 @@ public class apiGoREST {
         String bodyResponse = response.getBody().asString();
         System.out.println("Body Response: " + bodyResponse);
 
-        post_id = JsonPath.read(bodyResponse, "$.data.id");
+        assertEquals(200, response.getStatusCode());
+        assertNotNull(JsonPath.read(bodyResponse, "$.data.body"));
+        assertNotNull(bodyResponse);
+        assertTrue(bodyResponse.contains("created_at"));
 
     }
 
     @Test
-    public void ppget_user_comments() {
+    public void ppget_pub_comments() {
         RestAssured.baseURI = String.format("https://%s/public-api/posts/%s/comments", baseURL, post_id);
 
         Response response = given()
@@ -176,6 +213,11 @@ public class apiGoREST {
 
         String bodyResponse = response.getBody().asString();
         System.out.println("Body Response: " + bodyResponse);
+
+        assertEquals(200, response.getStatusCode());
+        assertNotNull(JsonPath.read(bodyResponse, "$.data[0].email"));
+        assertNotNull(bodyResponse);
+        assertTrue(bodyResponse.contains("created_at"));
 
     }
 
@@ -200,6 +242,12 @@ public class apiGoREST {
         String bodyResponse = response.getBody().asString();
         System.out.println("Body Response: " + bodyResponse);
 
+        assertEquals(200, response.getStatusCode());
+        assertEquals(true, JsonPath.read(bodyResponse, "$.data.completed"));
+        assertNotNull(JsonPath.read(bodyResponse, "$.data.title"));
+        assertNotNull(bodyResponse);
+        assertTrue(bodyResponse.contains("created_at"));
+
     }
 
     @Test
@@ -214,6 +262,12 @@ public class apiGoREST {
 
         String bodyResponse = response.getBody().asString();
         System.out.println("Body Response: " + bodyResponse);
+
+        assertEquals(200, response.getStatusCode());
+        assertEquals(true, JsonPath.read(bodyResponse, "$.data[0].completed"));
+        assertNotNull(JsonPath.read(bodyResponse, "$.data[0].title"));
+        assertNotNull(bodyResponse);
+        assertTrue(bodyResponse.contains("created_at"));
 
     }
 

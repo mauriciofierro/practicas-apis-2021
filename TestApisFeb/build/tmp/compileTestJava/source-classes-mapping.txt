@@ -2,7 +2,9 @@ apiCurso/apiECommerce.java
  apiCurso.apiECommerce
 tokenExample.java
  tokenExample
-apiCurso/apiCoronavirus.java
- apiCurso.apiCoronavirus
 apiCurso/apiGoREST.java
  apiCurso.apiGoREST
+apiCurso/apiCoronavirus.java
+ apiCurso.apiCoronavirus
+apiCurso/apiReqres.java
+ apiCurso.apiReqres
