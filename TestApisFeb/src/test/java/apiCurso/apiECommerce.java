@@ -22,6 +22,7 @@ private static String baseURL;
     private static String token;
     private static String user_uuid;
     private static String account_id;
+    private static String address_id;
 
     @Before
     public void obtener_var_ent() {
@@ -268,6 +269,11 @@ System.out.println("Body Response: " + bodyResponse);
 
 System.out.println("Datos: " + datos);
 System.out.println("Encode: "+ encodeAuth);
+
+        assertEquals(401, response.getStatusCode());
+        assertNotNull(bodyResponse);
+        assertTrue(bodyResponse.contains("error"));
+        assertTrue(response.getTime() < 1300);
     }
 
     @Test
@@ -276,6 +282,7 @@ System.out.println("Encode: "+ encodeAuth);
 
         String user_name = "chico." + 1092;
         String email = user_name + "@mailinator.com";
+        //String full_account_id;
         int password = 12345;
 
         String datos = email + ":" + password;
@@ -296,9 +303,61 @@ System.out.println("Encode: "+ encodeAuth);
         user_uuid = JsonPath.read(bodyResponse, "$.account.uuid");
         account_id = JsonPath.read(bodyResponse, "$.account.account_id");
 
+
         System.out.println(token);
         System.out.println(user_uuid);
         System.out.println(account_id);
+
+        assertEquals(200, response.getStatusCode());
+        assertNotNull(bodyResponse);
+        assertTrue(bodyResponse.contains("access_token"));
+        assertTrue(response.getTime() < 5000);
+    }
+
+    @Test
+    public void modificar_usuario() {
+        RestAssured.baseURI = String.format("https://%s/nga/api/v1/private/accounts/11116129", baseURL);
+
+        String bodyRequest = "{\n" +
+                "    \"account\": {\n" +
+                "        \"name\": \"Francisco Gonzalez\",\n" +
+                "        \"phone\": \"7441928376\",\n" +
+                "        \"locations\": [\n" +
+                "            {\n" +
+                "                \"code\": \"11\",\n" +
+                "                \"key\": \"region\",\n" +
+                "                \"label\": \"Ciudad de México\",\n" +
+                "                \"locations\": [\n" +
+                "                    {\n" +
+                "                        \"code\": \"294\",\n" +
+                "                        \"key\": \"municipality\",\n" +
+                "                        \"label\": \"Cuajimalpa de Morelos\"\n" +
+                "                    }\n" +
+                "                ]\n" +
+                "            }\n" +
+                "        ],\n" +
+                "        \"professional\": false,\n" +
+                "        \"phone_hidden\": false\n" +
+                "    }\n" +
+                "}";
+
+        Response response = given()
+                .log().all()
+                .queryParam("lang", "es")
+                .header("Authorization", "tag:scmcoord.com,2013:api " + token)
+                .header("Content-Type", "application/json")
+                .header("Accept", "*/*")
+                .body(bodyRequest)
+                .patch();
+
+        String bodyResponse = response.getBody().asString();
+        System.out.println("Body Response: " + bodyResponse);
+
+        assertEquals(200, response.getStatusCode());
+        assertNotNull(bodyResponse);
+        assertEquals(true, JsonPath.read(bodyResponse, "$.account.email_verified"));
+        assertTrue(bodyResponse.contains("uuid"));
+        assertTrue(response.getTime() < 800);
     }
 
     @Test
@@ -316,20 +375,27 @@ System.out.println("Encode: "+ encodeAuth);
                 .log().all()
                 .header("Content-Type", "application/x-www-form-urlencoded")
                 .header("Authorization", "Basic " + encodeAuth)
-                .formParam("contact", "Senora M")
+                .formParam("contact", "Srita. Fdez.")
                 .formParam("phone","4467946135")
                 .formParam("rfc", "MERS851125XXX")
                 .formParam("zipCode", "45050")
-                .formParam("exteriorInfo", "Magdalena Contreras 10")
+                .formParam("exteriorInfo", "Chilpayatito D-105")
                 .formParam("region", "5")
                 .formParam("municipality", "51")
                 .formParam("area", "28514")
-                .formParam("alias", "Le Ranche")
+                .formParam("alias", "Le Poisson")
                 .post();
 
     //System.out.println(datos);
         String bodyResponse = response.getBody().asString();
-    System.out.println("Body Response: " + bodyResponse);
+        System.out.println("Body Response: " + bodyResponse);
+
+        address_id = JsonPath.read(bodyResponse, "$.addressID");
+
+        assertEquals(201, response.getStatusCode());
+        assertNotNull(bodyResponse);
+        assertTrue(bodyResponse.contains("addressID"));
+        assertTrue(response.getTime() < 800);
 
     }
 
@@ -364,8 +430,39 @@ System.out.println("Encode: "+ encodeAuth);
 
         String bodyResponse = response.getBody().asString();
         System.out.println("Body Response: " + bodyResponse);
+
+        assertEquals(200, response.getStatusCode());
+        assertNotNull(bodyResponse);
+        assertTrue(bodyResponse.contains("ad_id"));
+        assertTrue(response.getTime() < 2500);
     }
 
+    @Test
+    public void xeliminar_direccion() {
+        RestAssured.baseURI = String.format("https://%s/addresses/v1/delete/%s", baseURL, address_id);
 
+        System.out.println("UUID: " + user_uuid);
+        System.out.println("Token: " + token);
+
+        String datos = user_uuid + ":" + token;
+        String encodeAuth = Base64.getEncoder().encodeToString(datos.getBytes(StandardCharsets.UTF_8));
+        //System.out.println("Encode Auth: "+ encodeAuth);
+
+        Response response = given()
+                .log().all()
+                .header("Accept", "*/*")
+                .header("Authorization", "Basic " + encodeAuth)
+                .delete();
+
+        //System.out.println(datos);
+        String bodyResponse = response.getBody().asString();
+        System.out.println("Body Response: " + bodyResponse);
+
+        assertEquals(200, response.getStatusCode());
+        assertNotNull(bodyResponse);
+        assertTrue(bodyResponse.contains("message"));
+        assertTrue(response.getTime() < 800);
+
+    }
 
 }

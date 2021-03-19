@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="apiCurso.apiGoREST" tests="10" skipped="0" failures="0" errors="0" timestamp="2021-03-17T02:57:03" hostname="DESKTOP-RAICCHM" time="17.638">
+  <properties/>
+  <testcase name="create_users" classname="apiCurso.apiGoREST" time="4.196"/>
+  <testcase name="get_all_users" classname="apiCurso.apiGoREST" time="1.508"/>
+  <testcase name="get_single_user" classname="apiCurso.apiGoREST" time="1.478"/>
+  <testcase name="patch_user" classname="apiCurso.apiGoREST" time="1.541"/>
+  <testcase name="post_user_publication" classname="apiCurso.apiGoREST" time="1.474"/>
+  <testcase name="post_user_qcomments" classname="apiCurso.apiGoREST" time="1.545"/>
+  <testcase name="post_users_todos" classname="apiCurso.apiGoREST" time="1.462"/>
+  <testcase name="ppget_user_comments" classname="apiCurso.apiGoREST" time="1.499"/>
+  <testcase name="ppget_user_publication" classname="apiCurso.apiGoREST" time="1.464"/>
+  <testcase name="ppget_users_todos" classname="apiCurso.apiGoREST" time="1.46"/>
+  <system-out><![CDATA[{
+    "name": "Zelda Fitzgerald",
+    "gender": "Female",
+    "email": "zelda.fitzgerald@emerson.com",
+    "status": "Active"
+}
+Request method:	POST
+Request URI:	https://gorest.co.in/public-api/users
+Proxy:			<none>
+Request params:	<none>
+Query params:	<none>
+Form params:	<none>
+Path params:	<none>
+Headers:		Authorization=Bearer 7efc10342c9f7a0fef2e344fe048eb2a87317092e67cbd598ba0988a2e6c8a33
+				Accept=*/*
+				Content-Type=application/json; charset=UTF-8
+Cookies:		<none>
+Multiparts:		<none>
+Body:
+{
+    "name": "Zelda Fitzgerald",
+    "gender": "Female",
+    "email": "zelda.fitzgerald@emerson.com",
+    "status": "Active"
+}
+Body Response: {"code":201,"meta":null,"data":{"id":1330,"name":"Zelda Fitzgerald","email":"zelda.fitzgerald@emerson.com","gender":"Female","status":"Active","created_at":"2021-03-17T08:27:01.248+05:30","updated_at":"2021-03-17T08:27:01.248+05:30"}}
+Request method:	GET
+Request URI:	https://gorest.co.in/public-api/users
+Proxy:			<none>
+Request params:	<none>
+Query params:	<none>
+Form params:	<none>
+Path params:	<none>
+Headers:		Accept=*/*
+Cookies:		<none>
+Multiparts:		<none>
+Body:			<none>
+Body Response: {"code":200,"meta":{"pagination":{"total":1284,"pages":65,"page":1,"limit":20}},"data":[{"id":21,"name":"Papotico","email":"dr@wintheiser.org","gender":"Male","status":"Active","created_at":"2021-03-17T03:50:04.602+05:30","updated_at":"2021-03-17T07:07:05.512+05:30"},{"id":23,"name":"Alexander","email":"alex@schamberger.net","gender":"Female","status":"Inactive","created_at":"2021-03-17T03:50:04.650+05:30","updated_at":"2021-03-17T07:07:35.731+05:30"},{"id":24,"name":"Génova","email":"genova@hotmail.com","gender":"Male","status":"Active","created_at":"2021-03-17T03:50:04.657+05:30","updated_at":"2021-03-17T07:17:11.447+05:30"},{"id":25,"name":"Aayushman Kapoor","email":"aayushman_kapoor@legros.biz","gender":"Male","status":"Active","created_at":"2021-03-17T03:50:04.679+05:30","updated_at":"2021-03-17T03:50:04.679+05:30"},{"id":26,"name":"Bakula Dwivedi","email":"dwivedi_bakula@gibson-bogan.org","gender":"Female","status":"Active","created_at":"2021-03-17T03:50:04.698+05:30","updated_at":"2021-03-17T03:50:04.698+05:30"},{"id":27,"name":"Durgeshwari Dubashi","email":"dubashi_durgeshwari@mitchell.co","gender":"Male","status":"Active","created_at":"2021-03-17T03:50:04.720+05:30","updated_at":"2021-03-17T03:50:04.720+05:30"},{"id":28,"name":"Chandrabhaga Khatri","email":"khatri_chandrabhaga@batz-fahey.co","gender":"Male","status":"Active","created_at":"2021-03-17T03:50:04.754+05:30","updated_at":"2021-03-17T03:50:04.754+05:30"},{"id":29,"name":"Drona Khatri","email":"drona_khatri@kiehn.net","gender":"Male","status":"Inactive","created_at":"2021-03-17T03:50:04.777+05:30","updated_at":"2021-03-17T03:50:04.777+05:30"},{"id":30,"name":"Ananda Agarwal","email":"ananda_agarwal@purdy.name","gender":"Female","status":"Active","created_at":"2021-03-17T03:50:04.810+05:30","updated_at":"2021-03-17T03:50:04.810+05:30"},{"id":31,"name":"Sitara Naik DVM","email":"dvm_naik_sitara@rogahn-abshire.info","gender":"Male","status":"Inactive","created_at":"2021-03-17T03:50:04.839+05:30","updated_at":"2021-03-17T03:50:04.839+05:30"},{"id":32,"name":"Kanishka Singh","email":"singh_kanishka@schinner.co","gender":"Female","status":"Inactive","created_at":"2021-03-17T03:50:04.843+05:30","updated_at":"2021-03-17T03:50:04.843+05:30"},{"id":33,"name":"Amritambu Jain DC","email":"jain_amritambu_dc@altenwerth.name","gender":"Male","status":"Active","created_at":"2021-03-17T03:50:04.866+05:30","updated_at":"2021-03-17T03:50:04.866+05:30"},{"id":34,"name":"Rep. Gautami Dhawan","email":"rep_gautami_dhawan@pollich-lubowitz.io","gender":"Male","status":"Active","created_at":"2021-03-17T03:50:04.879+05:30","updated_at":"2021-03-17T03:50:04.879+05:30"},{"id":35,"name":"Bhanumati Joshi","email":"joshi_bhanumati@altenwerth-kerluke.io","gender":"Female","status":"Active","created_at":"2021-03-17T03:50:04.890+05:30","updated_at":"2021-03-17T03:50:04.890+05:30"},{"id":36,"name":"Rev. Sarala Reddy","email":"rev_sarala_reddy@roberts-bins.info","gender":"Male","status":"Inactive","created_at":"2021-03-17T03:50:04.929+05:30","updated_at":"2021-03-17T03:50:04.929+05:30"},{"id":37,"name":"Som Iyer","email":"iyer_som@romaguera.io","gender":"Male","status":"Active","created_at":"2021-03-17T03:50:04.947+05:30","updated_at":"2021-03-17T03:50:04.947+05:30"},{"id":38,"name":"Adityanandana Kakkar V","email":"kakkar_adityanandana_v@lockman.org","gender":"Male","status":"Active","created_at":"2021-03-17T03:50:04.956+05:30","updated_at":"2021-03-17T03:50:04.956+05:30"},{"id":39,"name":"Krishnadas Marar LLD","email":"marar_lld_krishnadas@rohan-predovic.info","gender":"Female","status":"Active","created_at":"2021-03-17T03:50:04.963+05:30","updated_at":"2021-03-17T03:50:04.963+05:30"},{"id":40,"name":"Gayatri Agarwal Sr.","email":"gayatri_sr_agarwal@lindgren.io","gender":"Female","status":"Inactive","created_at":"2021-03-17T03:50:04.968+05:30","updated_at":"2021-03-17T03:50:04.968+05:30"},{"id":41,"name":"Mohini Chattopadhyay","email":"mohini_chattopadhyay@dicki-wolf.org","gender":"Male","status":"Active","created_at":"2021-03-17T03:50:04.979+05:30","updated_at":"2021-03-17T03:50:04.979+05:30"}]}
+Request method:	GET
+Request URI:	https://gorest.co.in/public-api/users/1330
+Proxy:			<none>
+Request params:	<none>
+Query params:	<none>
+Form params:	<none>
+Path params:	<none>
+Headers:		Accept=*/*
+Cookies:		<none>
+Multiparts:		<none>
+Body:			<none>
+Body Response: {"code":200,"meta":null,"data":{"id":1330,"name":"Zelda Fitzgerald","email":"zelda.fitzgerald@emerson.com","gender":"Female","status":"Active","created_at":"2021-03-17T08:27:01.248+05:30","updated_at":"2021-03-17T08:27:01.248+05:30"}}
+Request method:	PATCH
+Request URI:	https://gorest.co.in/public-api/users/1330
+Proxy:			<none>
+Request params:	<none>
+Query params:	<none>
+Form params:	<none>
+Path params:	<none>
+Headers:		Authorization=Bearer 7efc10342c9f7a0fef2e344fe048eb2a87317092e67cbd598ba0988a2e6c8a33
+				Accept=*/*
+				Content-Type=application/json; charset=UTF-8
+Cookies:		<none>
+Multiparts:		<none>
+Body:
+{
+    "name": "Zelda Williams"
+}
+Body Response: {"code":200,"meta":null,"data":{"id":1330,"name":"Zelda Williams","email":"zelda.fitzgerald@emerson.com","gender":"Female","status":"Active","created_at":"2021-03-17T08:27:01.248+05:30","updated_at":"2021-03-17T08:27:06.126+05:30"}}
+Request method:	POST
+Request URI:	https://gorest.co.in/public-api/users/1330/posts
+Proxy:			<none>
+Request params:	<none>
+Query params:	<none>
+Form params:	<none>
+Path params:	<none>
+Headers:		Authorization=Bearer 7efc10342c9f7a0fef2e344fe048eb2a87317092e67cbd598ba0988a2e6c8a33
+				Accept=*/*
+				Content-Type=application/json; charset=UTF-8
+Cookies:		<none>
+Multiparts:		<none>
+Body:
+{
+    "title": "Whose name is the Princess's?",
+    "body": "It's because of F. Scott Fitzgerlad's wife, of course!"
+}
+Body Response: {"code":201,"meta":null,"data":{"id":1268,"user_id":1330,"title":"Whose name is the Princess's?","body":"It's because of F. Scott Fitzgerlad's wife, of course!","created_at":"2021-03-17T08:27:07.596+05:30","updated_at":"2021-03-17T08:27:07.596+05:30"}}
+Request method:	POST
+Request URI:	https://gorest.co.in/public-api/posts/1268/comments
+Proxy:			<none>
+Request params:	<none>
+Query params:	<none>
+Form params:	<none>
+Path params:	<none>
+Headers:		Authorization=Bearer 7efc10342c9f7a0fef2e344fe048eb2a87317092e67cbd598ba0988a2e6c8a33
+				Accept=*/*
+				Content-Type=application/json; charset=UTF-8
+Cookies:		<none>
+Multiparts:		<none>
+Body:
+{
+    "name": "Chuchita Perez",
+    "email": "the.chuchs@no-reply.com",
+    "body": "I did not know that! Thank you for enlightening us!"
+}
+Body Response: {"code":201,"meta":null,"data":{"id":1259,"post_id":1268,"name":"Chuchita Perez","email":"the.chuchs@no-reply.com","body":"I did not know that! Thank you for enlightening us!","created_at":"2021-03-17T08:27:09.135+05:30","updated_at":"2021-03-17T08:27:09.135+05:30"}}
+{
+    "title": "Brush your teeth before you go to bed!",
+    "completed": true
+}
+Request method:	POST
+Request URI:	https://gorest.co.in/public-api/users/1330/todos
+Proxy:			<none>
+Request params:	<none>
+Query params:	<none>
+Form params:	<none>
+Path params:	<none>
+Headers:		Authorization=Bearer 7efc10342c9f7a0fef2e344fe048eb2a87317092e67cbd598ba0988a2e6c8a33
+				Accept=*/*
+				Content-Type=application/json; charset=UTF-8
+Cookies:		<none>
+Multiparts:		<none>
+Body:
+{
+    "title": "Brush your teeth before you go to bed!",
+    "completed": true
+}
+Body Response: {"code":201,"meta":null,"data":{"id":1841,"user_id":1330,"title":"Brush your teeth before you go to bed!","completed":true,"created_at":"2021-03-17T08:27:10.614+05:30","updated_at":"2021-03-17T08:27:10.614+05:30"}}
+Request method:	GET
+Request URI:	https://gorest.co.in/public-api/posts/1259/comments
+Proxy:			<none>
+Request params:	<none>
+Query params:	<none>
+Form params:	<none>
+Path params:	<none>
+Headers:		Authorization=Bearer 7efc10342c9f7a0fef2e344fe048eb2a87317092e67cbd598ba0988a2e6c8a33
+				Accept=*/*
+				Content-Type=application/json; charset=UTF-8
+Cookies:		<none>
+Multiparts:		<none>
+Body:			<none>
+Body Response: {"code":200,"meta":{"pagination":{"total":0,"pages":0,"page":1,"limit":20}},"data":[]}
+Request method:	GET
+Request URI:	https://gorest.co.in/public-api/users/1330/posts
+Proxy:			<none>
+Request params:	<none>
+Query params:	<none>
+Form params:	<none>
+Path params:	<none>
+Headers:		Authorization=Bearer 7efc10342c9f7a0fef2e344fe048eb2a87317092e67cbd598ba0988a2e6c8a33
+				Accept=*/*
+				Content-Type=application/json; charset=UTF-8
+Cookies:		<none>
+Multiparts:		<none>
+Body:			<none>
+Body Response: {"code":200,"meta":{"pagination":{"total":1,"pages":1,"page":1,"limit":20}},"data":[{"id":1268,"user_id":1330,"title":"Whose name is the Princess's?","body":"It's because of F. Scott Fitzgerlad's wife, of course!","created_at":"2021-03-17T08:27:07.596+05:30","updated_at":"2021-03-17T08:27:07.596+05:30"}]}
+Request method:	GET
+Request URI:	https://gorest.co.in/public-api/users/1330/todos
+Proxy:			<none>
+Request params:	<none>
+Query params:	<none>
+Form params:	<none>
+Path params:	<none>
+Headers:		Authorization=Bearer 7efc10342c9f7a0fef2e344fe048eb2a87317092e67cbd598ba0988a2e6c8a33
+				Accept=*/*
+				Content-Type=application/json; charset=UTF-8
+Cookies:		<none>
+Multiparts:		<none>
+Body:			<none>
+Body Response: {"code":200,"meta":{"pagination":{"total":1,"pages":1,"page":1,"limit":20}},"data":[{"id":1841,"user_id":1330,"title":"Brush your teeth before you go to bed!","completed":true,"created_at":"2021-03-17T08:27:10.614+05:30","updated_at":"2021-03-17T08:27:10.614+05:30"}]}
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
