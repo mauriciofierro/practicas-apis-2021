@@ -272,4 +272,256 @@ public class apiCoronavirus {
         assertNotNull(bodyResponse);
         assertTrue(bodyResponse.contains("tested"));
     }
+
+    @Test
+    public void test_ping_api_error() {
+        RestAssured.baseURI = String.format("https://%s/api/v1/pong/", baseURL);
+
+        Response response = given()
+                .log().all()
+                .header("Accept", "*/*")
+                .get();
+
+        String bodyResponse = response.getBody().asString();
+
+        System.out.println("\nResponse --------------------------------\n");
+
+
+
+        System.out.println("Response Body: " + bodyResponse);
+        System.out.println("Status: " + response.statusCode());
+        System.out.println("Headers: " + response.getHeader("Content-Type"));
+
+        System.out.println("\nTest --------------------------------");
+
+        assertEquals(404, response.getStatusCode());
+        assertNotNull(bodyResponse);
+        assertTrue(response.getTime() < 1500);
+    }
+
+    @Test
+    public void test_summary_api_error() {
+        RestAssured.baseURI = String.format("https://%s/api/v1/summary/late/", baseURL);
+
+        Response response = given()
+                .log().all()
+                .header("Accept", "*/*")
+                .get();
+
+        String bodyResponse = response.getBody().asString();
+
+        System.out.println("\nResponse --------------------------------\n");
+
+
+
+        System.out.println("Response Body: " + bodyResponse);
+        System.out.println("Status: " + response.statusCode());
+        System.out.println("Headers: " + response.getHeader("Content-Type"));
+
+        System.out.println("\nTest --------------------------------");
+
+        assertEquals(404, response.getStatusCode());
+        assertNotNull(bodyResponse);
+        assertTrue(bodyResponse.contains("html"));
+        assertTrue(response.getTime() < 1500);
+    }
+
+    @Test
+    public void test_summary_by_region_api_error() {
+        RestAssured.baseURI = String.format("http://%s/api/v1/summary/region", baseURL);
+
+        Response response = given()
+                .log().all()
+                .queryParam("region", "Mejico")
+                .queryParam("sub_area", "1")
+                .header("Accept", "*/*")
+                .get();
+
+        String bodyResponse = response.getBody().asString();
+
+        System.out.println("\nResponse --------------------------------\n");
+
+
+        System.out.println("Response Body: " + bodyResponse);
+        System.out.println("Status: " + response.statusCode());
+        System.out.println("Headers: " + response.getHeader("Content-Type"));
+
+        System.out.println("\nTest --------------------------------");
+
+        assertEquals(404, response.getStatusCode());
+        assertNotNull(bodyResponse);
+        assertEquals("error",JsonPath.read(bodyResponse, "$.type"));
+        assertTrue(bodyResponse.contains("message"));
+        assertTrue(response.getTime() < 1500);
+
+    }
+
+    @Test
+    public void test_summary_by_region_by_day_api_error() {
+        RestAssured.baseURI = String.format("https://%s/api/v1/spots/day", baseURL);
+
+        Response response = given()
+                .log().all()
+                .queryParam("region", "us")
+                .header("Accept", "*/*")
+                .get();
+
+        String bodyResponse = response.getBody().asString();
+
+        System.out.println("\nResponse --------------------------------\n");
+
+
+        System.out.println("Response Body: " + bodyResponse);
+        System.out.println("Status: " + response.statusCode());
+        System.out.println("Headers: " + response.getHeader("Content-Type"));
+
+        System.out.println("\nTest --------------------------------");
+
+        assertEquals(500, response.getStatusCode());
+        assertNotNull(bodyResponse);
+        assertTrue(bodyResponse.contains("html"));
+        assertTrue(response.getTime() < 1500);
+
+    }
+
+    @Test
+    public void test_region_by_week_api_error() {
+        RestAssured.baseURI = String.format("https://%s/api/v1/spots/week", baseURL);
+
+        Response response = given()
+                .log().all()
+                .queryParam("region", "rusia")
+                .header("Accept", "*/*")
+                .get();
+
+        String bodyResponse = response.getBody().asString();
+
+        System.out.println("\nResponse --------------------------------\n");
+
+
+        System.out.println("Response Body: " + bodyResponse);
+        System.out.println("Status: " + response.statusCode());
+        System.out.println("Headers: " + response.getHeader("Content-Type"));
+
+        System.out.println("\nTest --------------------------------");
+
+        assertEquals(404, response.getStatusCode());
+        assertNotNull(bodyResponse);
+        assertEquals("error",JsonPath.read(bodyResponse, "$.type"));
+        assertTrue(bodyResponse.contains("message"));
+        assertTrue(response.getTime() < 1500);
+
+    }
+
+    @Test
+    public void test_region_by_month_api_error() {
+        RestAssured.baseURI = String.format("https://%s/api/v1/spots/month", baseURL);
+
+        Response response = given()
+                .log().all()
+                .queryParam("region", "ussa")
+                .header("Accept", "*/*")
+                .get();
+
+        String bodyResponse = response.getBody().asString();
+
+        System.out.println("\nResponse --------------------------------\n");
+
+
+        System.out.println("Response Body: " + bodyResponse);
+        System.out.println("Status: " + response.statusCode());
+        System.out.println("Headers: " + response.getHeader("Content-Type"));
+
+        System.out.println("\nTest --------------------------------");
+
+        assertEquals(404, response.getStatusCode());
+        assertNotNull(bodyResponse);
+        assertEquals("error",JsonPath.read(bodyResponse, "$.type"));
+        assertTrue(bodyResponse.contains("message"));
+        assertTrue(response.getTime() < 1500);
+    }
+
+    @Test
+    public void test_region_by_year_api_error() {
+        RestAssured.baseURI = String.format("https://%s/api/v1/spots/year", baseURL);
+
+        Response response = given()
+                .log().all()
+                .queryParam("region", "xina")
+                .header("Accept", "*/*")
+                .get();
+
+        String bodyResponse = response.getBody().asString();
+
+        System.out.println("\nResponse --------------------------------\n");
+
+
+        System.out.println("Response Body: " + bodyResponse);
+        System.out.println("Status: " + response.statusCode());
+        System.out.println("Headers: " + response.getHeader("Content-Type"));
+
+        System.out.println("\nTest --------------------------------");
+
+        assertEquals(404, response.getStatusCode());
+        assertNotNull(bodyResponse);
+        assertEquals("error",JsonPath.read(bodyResponse, "$.type"));
+        assertTrue(bodyResponse.contains("message"));
+        assertTrue(response.getTime() < 1500);
+    }
+
+    @Test
+    public void test_region_daily_hist_api_error() {
+        RestAssured.baseURI = String.format("http://%s/api/v1/spots/region", baseURL);
+
+        Response response = given()
+                .log().all()
+                .queryParam("region", "mex")
+                .header("Accept", "*/*")
+                .get();
+
+        String bodyResponse = response.getBody().asString();
+
+        System.out.println("\nResponse --------------------------------\n");
+
+
+        System.out.println("Response Body: " + bodyResponse);
+        System.out.println("Status: " + response.statusCode());
+        System.out.println("Headers: " + response.getHeader("Content-Type"));
+
+        System.out.println("\nTest --------------------------------");
+
+        assertEquals(404, response.getStatusCode());
+        assertNotNull(bodyResponse);
+        assertEquals("error",JsonPath.read(bodyResponse, "$.type"));
+        assertTrue(bodyResponse.contains("message"));
+        assertTrue(response.getTime() < 1500);
+
+    }
+
+    @Test
+    public void test_world_daily_hist_api_error() {
+        RestAssured.baseURI = String.format("http://%s/api/v1/spots/sumary", baseURL);
+
+        Response response = given()
+                .log().all()
+                .header("Accept", "*/*")
+                .get();
+
+        String bodyResponse = response.getBody().asString();
+
+        System.out.println("\nResponse --------------------------------\n");
+
+
+        System.out.println("Response Body: " + bodyResponse);
+        System.out.println("Status: " + response.statusCode());
+        System.out.println("Headers: " + response.getHeader("Content-Type"));
+
+        System.out.println("\nTest --------------------------------");
+
+        assertEquals(404, response.getStatusCode());
+        assertNotNull(bodyResponse);
+        assertTrue(bodyResponse.contains("html"));
+        assertTrue(response.getTime() < 1500);
+
+    }
 }

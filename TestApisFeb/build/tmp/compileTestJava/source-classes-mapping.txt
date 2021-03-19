@@ -4,7 +4,9 @@ tokenExample.java
  tokenExample
 apiCurso/apiGoREST.java
  apiCurso.apiGoREST
-apiCurso/apiCoronavirus.java
- apiCurso.apiCoronavirus
 apiCurso/apiReqres.java
  apiCurso.apiReqres
+apiCurso/apiCOVID1.java
+ apiCurso.apiCOVID1
+apiCurso/apiCoronavirus.java
+ apiCurso.apiCoronavirus

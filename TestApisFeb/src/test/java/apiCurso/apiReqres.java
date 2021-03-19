@@ -259,7 +259,7 @@ public class apiReqres {
         assertNotNull(JsonPath.read(bodyResponse, "$.error"));
         assertNotNull(bodyResponse);
         assertTrue(bodyResponse.contains("error"));
-        assertTrue(response.getTime() < 600);
+        assertTrue(response.getTime() < 3600);
 
     }
 
